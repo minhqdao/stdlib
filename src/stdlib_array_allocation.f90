@@ -13,10 +13,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_1)
@@ -33,10 +33,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_2)
@@ -53,10 +53,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_3)
@@ -73,10 +73,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_4)
@@ -93,10 +93,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_5)
@@ -113,10 +113,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_6)
@@ -133,10 +133,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rsp_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rsp_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rsp_7)
@@ -153,10 +153,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_1)
@@ -173,10 +173,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_2)
@@ -193,10 +193,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_3)
@@ -213,10 +213,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_4)
@@ -233,10 +233,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_5)
@@ -253,10 +253,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_6)
@@ -273,10 +273,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_rdp_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_rdp_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_rdp_7)
@@ -293,10 +293,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_1)
@@ -313,10 +313,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_2)
@@ -333,10 +333,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_3)
@@ -353,10 +353,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_4)
@@ -373,10 +373,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_5)
@@ -393,10 +393,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_6)
@@ -413,10 +413,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint8_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint8_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint8_7)
@@ -433,10 +433,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_1)
@@ -453,10 +453,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_2)
@@ -473,10 +473,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_3)
@@ -493,10 +493,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_4)
@@ -513,10 +513,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_5)
@@ -533,10 +533,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_6)
@@ -553,10 +553,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint16_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint16_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint16_7)
@@ -573,10 +573,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_1)
@@ -593,10 +593,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_2)
@@ -613,10 +613,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_3)
@@ -633,10 +633,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_4)
@@ -653,10 +653,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_5)
@@ -673,10 +673,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_6)
@@ -693,10 +693,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint32_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint32_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint32_7)
@@ -713,10 +713,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_1)
@@ -733,10 +733,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_2)
@@ -753,10 +753,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_3)
@@ -773,10 +773,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_4)
@@ -793,10 +793,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_5)
@@ -813,10 +813,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_6)
@@ -833,10 +833,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_iint64_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_iint64_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_iint64_7)
@@ -853,10 +853,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_1)
@@ -873,10 +873,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_2)
@@ -893,10 +893,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_3)
@@ -913,10 +913,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_4)
@@ -933,10 +933,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_5)
@@ -953,10 +953,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_6)
@@ -973,10 +973,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_csp_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_csp_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_csp_7)
@@ -993,10 +993,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_1 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_1 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_1)
@@ -1013,10 +1013,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_2 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_2 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_2)
@@ -1033,10 +1033,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_3 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_3 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_3)
@@ -1053,10 +1053,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_4 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_4 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_4)
@@ -1073,10 +1073,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_5 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_5 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_5)
@@ -1093,10 +1093,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_6 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_6 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_6)
@@ -1113,10 +1113,10 @@ contains
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
-        allocate(t_array_cdp_7 :: wrapper%array, stat=stat)
-        if (stat /= 0) then
-            msg = "Failed to allocate array"; return
-        end if
+        ! allocate(t_array_cdp_7 :: wrapper%array, stat=stat)
+        ! if (stat /= 0) then
+        !     msg = "Failed to allocate array"; return
+        ! end if
 
         ! select type (typed_array => wrapper%array)
         !   class is (t_array_cdp_7)
