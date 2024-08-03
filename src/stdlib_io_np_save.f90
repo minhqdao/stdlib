@@ -89,7 +89,7 @@ contains
     end
 
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_rsp_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -124,7 +124,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_rsp_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -159,7 +159,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_rsp_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -194,7 +194,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_rsp_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -229,7 +229,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_rsp_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -264,7 +264,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_rsp_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -299,7 +299,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_rsp_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rsp_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -334,7 +334,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_rdp_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -369,7 +369,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_rdp_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -404,7 +404,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_rdp_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -439,7 +439,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_rdp_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -474,7 +474,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_rdp_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -509,7 +509,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_rdp_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -544,7 +544,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_rdp_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_rdp_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -579,7 +579,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_iint8_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -614,7 +614,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_iint8_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -649,7 +649,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_iint8_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -684,7 +684,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_iint8_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -719,7 +719,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_iint8_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -754,7 +754,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_iint8_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -789,7 +789,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_iint8_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint8_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -824,7 +824,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_iint16_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -859,7 +859,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_iint16_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -894,7 +894,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_iint16_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -929,7 +929,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_iint16_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -964,7 +964,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_iint16_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -999,7 +999,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_iint16_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1034,7 +1034,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_iint16_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint16_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1069,7 +1069,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_iint32_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1104,7 +1104,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_iint32_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1139,7 +1139,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_iint32_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1174,7 +1174,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_iint32_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1209,7 +1209,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_iint32_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1244,7 +1244,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_iint32_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1279,7 +1279,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_iint32_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint32_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1314,7 +1314,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_iint64_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1349,7 +1349,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_iint64_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1384,7 +1384,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_iint64_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1419,7 +1419,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_iint64_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1454,7 +1454,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_iint64_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1489,7 +1489,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_iint64_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1524,7 +1524,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_iint64_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_iint64_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1559,7 +1559,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_csp_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1594,7 +1594,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_csp_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1629,7 +1629,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_csp_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1664,7 +1664,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_csp_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1699,7 +1699,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_csp_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1734,7 +1734,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_csp_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1769,7 +1769,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_csp_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_csp_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1804,7 +1804,7 @@ contains
         end if
     end
     !> Save 1-dimensional array in npy format
-    module subroutine save_npy_cdp_1 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_1(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1839,7 +1839,7 @@ contains
         end if
     end
     !> Save 2-dimensional array in npy format
-    module subroutine save_npy_cdp_2 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_2(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1874,7 +1874,7 @@ contains
         end if
     end
     !> Save 3-dimensional array in npy format
-    module subroutine save_npy_cdp_3 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_3(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1909,7 +1909,7 @@ contains
         end if
     end
     !> Save 4-dimensional array in npy format
-    module subroutine save_npy_cdp_4 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_4(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1944,7 +1944,7 @@ contains
         end if
     end
     !> Save 5-dimensional array in npy format
-    module subroutine save_npy_cdp_5 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_5(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -1979,7 +1979,7 @@ contains
         end if
     end
     !> Save 6-dimensional array in npy format
-    module subroutine save_npy_cdp_6 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_6(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
@@ -2014,7 +2014,7 @@ contains
         end if
     end
     !> Save 7-dimensional array in npy format
-    module subroutine save_npy_cdp_7 (filename, array, iostat, iomsg)
+    module subroutine save_npy_cdp_7(filename, array, iostat, iomsg)
         !> Name of the npy file to load from
         character(len=*), intent(in) :: filename
         !> Array to be loaded from the npy file
