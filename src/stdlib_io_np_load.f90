@@ -4292,7 +4292,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4315,7 +4315,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4338,7 +4338,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4361,7 +4361,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4384,7 +4384,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4407,7 +4407,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4430,7 +4430,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4459,7 +4459,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4482,7 +4482,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4505,7 +4505,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4528,7 +4528,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4551,7 +4551,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4574,7 +4574,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4597,7 +4597,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4626,7 +4626,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4649,7 +4649,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4672,7 +4672,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4695,7 +4695,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4718,7 +4718,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4741,7 +4741,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4764,7 +4764,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4793,7 +4793,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4816,7 +4816,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4839,7 +4839,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4862,7 +4862,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4885,7 +4885,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4908,7 +4908,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4931,7 +4931,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4960,7 +4960,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -4983,7 +4983,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5006,7 +5006,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5029,7 +5029,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5052,7 +5052,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5075,7 +5075,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5098,7 +5098,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5127,7 +5127,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5150,7 +5150,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5173,7 +5173,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5196,7 +5196,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5219,7 +5219,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5242,7 +5242,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5265,7 +5265,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5294,7 +5294,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5317,7 +5317,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5340,7 +5340,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5363,7 +5363,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5386,7 +5386,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5409,7 +5409,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5432,7 +5432,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5461,7 +5461,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5484,7 +5484,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5507,7 +5507,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5530,7 +5530,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5553,7 +5553,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5576,7 +5576,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
@@ -5599,7 +5599,7 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        call allocate_array(arrays(i), array, stat, msg)
+                        ! call allocate_array(arrays(i), array, stat, msg)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
