@@ -15,6 +15,7 @@ module stdlib_array
     type, public :: t_array_wrapper
         class(t_array), allocatable :: array
     contains
+        procedure :: allocate_array
 
     end type
 
@@ -23,9 +24,15 @@ module stdlib_array
     end type
 
 
-
 contains
+    subroutine allocate_array(wrapper, array, stat, msg)
+        class(t_array_wrapper), intent(out) :: wrapper
+        class(t_array), intent(in) :: array
+        integer, intent(out) :: stat
+        character(len=:), allocatable, intent(out) :: msg
 
+        print *, 'hi'
+    end
 
 
     !> Version: experimental
