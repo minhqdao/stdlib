@@ -14,26 +14,182 @@ module stdlib_array
     !> Helper class to allocate t_array as an abstract type.
     type, public :: t_array_wrapper
         class(t_array), allocatable :: array
-    contains
-        procedure :: allocate_array
-
     end type
 
     type, abstract, public :: t_array
         character(:), allocatable :: name
     end type
 
+    type, extends(t_array), public :: t_array_rsp_1
+        real(sp), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_2
+        real(sp), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_3
+        real(sp), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_4
+        real(sp), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_5
+        real(sp), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_6
+        real(sp), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rsp_7
+        real(sp), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_1
+        real(dp), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_2
+        real(dp), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_3
+        real(dp), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_4
+        real(dp), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_5
+        real(dp), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_6
+        real(dp), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_rdp_7
+        real(dp), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_1
+        integer(int8), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_2
+        integer(int8), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_3
+        integer(int8), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_4
+        integer(int8), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_5
+        integer(int8), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_6
+        integer(int8), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint8_7
+        integer(int8), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_1
+        integer(int16), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_2
+        integer(int16), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_3
+        integer(int16), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_4
+        integer(int16), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_5
+        integer(int16), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_6
+        integer(int16), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint16_7
+        integer(int16), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_1
+        integer(int32), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_2
+        integer(int32), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_3
+        integer(int32), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_4
+        integer(int32), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_5
+        integer(int32), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_6
+        integer(int32), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint32_7
+        integer(int32), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_1
+        integer(int64), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_2
+        integer(int64), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_3
+        integer(int64), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_4
+        integer(int64), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_5
+        integer(int64), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_6
+        integer(int64), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_iint64_7
+        integer(int64), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_1
+        complex(sp), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_csp_2
+        complex(sp), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_3
+        complex(sp), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_4
+        complex(sp), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_5
+        complex(sp), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_6
+        complex(sp), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_csp_7
+        complex(sp), allocatable :: values(:,:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_1
+        complex(dp), allocatable :: values(:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_2
+        complex(dp), allocatable :: values(:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_3
+        complex(dp), allocatable :: values(:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_4
+        complex(dp), allocatable :: values(:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_5
+        complex(dp), allocatable :: values(:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_6
+        complex(dp), allocatable :: values(:,:,:,:,:,:)
+    end type
+    type, extends(t_array), public :: t_array_cdp_7
+        complex(dp), allocatable :: values(:,:,:,:,:,:,:)
+    end type
 
 contains
-    subroutine allocate_array(wrapper, array, stat, msg)
-        class(t_array_wrapper), intent(out) :: wrapper
-        class(t_array), intent(in) :: array
-        integer, intent(out) :: stat
-        character(len=:), allocatable, intent(out) :: msg
-
-        print *, 'hi'
-    end
-
 
     !> Version: experimental
     !>

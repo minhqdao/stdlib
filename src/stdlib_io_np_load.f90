@@ -4292,11 +4292,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4315,11 +4322,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4338,11 +4352,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4361,11 +4382,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4384,11 +4412,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4407,11 +4442,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4430,11 +4472,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rsp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4459,11 +4508,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4482,11 +4538,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4505,11 +4568,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4528,11 +4598,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4551,11 +4628,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4574,11 +4658,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4597,11 +4688,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_rdp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4626,11 +4724,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4649,11 +4754,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4672,11 +4784,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4695,11 +4814,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4718,11 +4844,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4741,11 +4874,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4764,11 +4904,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint8_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4793,11 +4940,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4816,11 +4970,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4839,11 +5000,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4862,11 +5030,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4885,11 +5060,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4908,11 +5090,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4931,11 +5120,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint16_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4960,11 +5156,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -4983,11 +5186,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5006,11 +5216,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5029,11 +5246,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5052,11 +5276,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5075,11 +5306,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5098,11 +5336,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint32_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5127,11 +5372,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5150,11 +5402,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5173,11 +5432,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5196,11 +5462,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5219,11 +5492,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5242,11 +5522,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5265,11 +5552,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_iint64_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5294,11 +5588,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5317,11 +5618,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5340,11 +5648,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5363,11 +5678,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5386,11 +5708,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5409,11 +5738,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5432,11 +5768,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_csp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5461,11 +5804,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5484,11 +5834,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5507,11 +5864,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5530,11 +5894,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5553,11 +5924,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5576,11 +5954,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
@@ -5599,11 +5984,18 @@ contains
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
 
-                        ! call arrays(i)%allocate_array(stat, msg)
+                        allocate (t_array_cdp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape)); return
                         end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
                         arrays(i)%array%name = unzipped_bundle%files(i)%name
                     end block
