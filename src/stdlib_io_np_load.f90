@@ -3,7 +3,7 @@
 
 !> Implementation of loading npy files into multidimensional arrays
 submodule(stdlib_io_np) stdlib_io_np_load
-    use stdlib_array, only: t_array_wrapper, t_array
+    use stdlib_array
     use stdlib_error, only: error_stop
     use stdlib_filesystem, only: exists, list_dir, temp_dir
     use stdlib_io_zip, only: unzip, unzipped_folder, zip_contents
@@ -4229,6 +4229,8 @@ contains
         character(len=:), allocatable :: msg
         type(string_type), allocatable :: files(:)
 
+        if (present(iostat)) iostat = 0
+
         call unzip(filename, unzipped_folder, stat, msg)
         if (stat /= 0) then
             if (present(iostat)) iostat = stat
@@ -4260,67 +4262,1757 @@ contains
 
         integer :: i, io
         integer, allocatable :: vshape(:)
-        character(len=:), allocatable :: this_type
-        character(len=:), allocatable :: path
+        character(len=:), allocatable :: this_type, array_name, path
 
         allocate(arrays(size(files)))
 
         do i = 1, size(files)
-            open(newunit=io, file=dir//as_string(files(i)), form='unformatted', access='stream', iostat=stat, iomsg=msg)
+            array_name = as_string(files(i))
+            path = dir//'/'//array_name
+
+            open(newunit=io, file=path, form='unformatted', access='stream', iostat=stat, iomsg=msg)
             if (stat /= 0) return
 
-            call get_descriptor(io, as_string(files(i)), this_type, vshape, stat, msg)
+            call get_descriptor(io, array_name, this_type, vshape, stat, msg)
             if (stat /= 0) then
                 close(io, status='delete'); return
             end if
 
-!             select case (this_type)
-! #:for k1, t1 in KINDS_TYPES
-!               case (type_cdp)
-!                 select case (size(vshape))
-! #:for rank in RANKS
-!                   case (7)
-!                     block
-!                         complex(dp), allocatable :: array(:,:,:,:,:,:,:)
+            select case (this_type)
+              case (type_rsp)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        real(sp), allocatable :: array(:)
 
-!                         call allocate_array_from_shape(array, vshape, stat)
-!                         if (stat /= 0) then
-!                             msg = "Failed to allocate array of type '"//this_type//"'."; return
-!                         end if
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
 
-!                         read (io, iostat=stat) array
-!                         if (stat /= 0) then
-!                             msg = "Failed to read array of type '"//this_type//"' "//&
-!                             & 'with total size of '//to_string(product(vshape)); return
-!                         end if
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
 
-!                         allocate (t_array_cdp_7 :: arrays(i)%array, stat=stat)
-!                         if (stat /= 0) then
-!                             msg = "Failed to allocate array of type '"//this_type//"' "//&
-!                             & 'with total size of '//to_string(product(vshape)); return
-!                         end if
+                        allocate (t_array_rsp_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
 
-!                         select type (typed_array => arrays(i)%array)
-!                           class is (t_array_cdp_7)
-!                             typed_array%values = array
-!                           class default
-!                             msg = 'Failed to allocate values.'; stat = 1; return
-!                         end select
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
 
-!                         arrays(i)%array%name = unzipped_bundle%files(i)%name
-!                     end block
-! #:endfor
-!                   case default
-!                     stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
-!                     & to_string(size(vshape))//'.'; return
-!                 end select
-! #:endfor
-!               case default
-!                 stat = 1; msg = 'Unsupported array type: '//this_type//'.'; return
-!             end select
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        real(sp), allocatable :: array(:,:)
 
-!             close (io, status='delete')
-!             if (stat /= 0) return
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        real(sp), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        real(sp), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        real(sp), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        real(sp), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        real(sp), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rsp_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rsp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_rdp)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        real(dp), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        real(dp), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        real(dp), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        real(dp), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        real(dp), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        real(dp), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        real(dp), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_rdp_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_rdp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_iint8)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        integer(int8), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        integer(int8), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        integer(int8), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        integer(int8), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        integer(int8), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        integer(int8), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        integer(int8), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint8_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint8_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_iint16)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        integer(int16), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        integer(int16), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        integer(int16), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        integer(int16), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        integer(int16), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        integer(int16), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        integer(int16), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint16_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint16_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_iint32)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        integer(int32), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        integer(int32), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        integer(int32), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        integer(int32), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        integer(int32), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        integer(int32), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        integer(int32), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint32_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint32_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_iint64)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        integer(int64), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        integer(int64), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        integer(int64), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        integer(int64), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        integer(int64), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        integer(int64), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        integer(int64), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_iint64_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_iint64_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_csp)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        complex(sp), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        complex(sp), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        complex(sp), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        complex(sp), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        complex(sp), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        complex(sp), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        complex(sp), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_csp_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_csp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case (type_cdp)
+                select case (size(vshape))
+                  case (1)
+                    block
+                        complex(dp), allocatable :: array(:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_1 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_1)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (2)
+                    block
+                        complex(dp), allocatable :: array(:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_2 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_2)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (3)
+                    block
+                        complex(dp), allocatable :: array(:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_3 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_3)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (4)
+                    block
+                        complex(dp), allocatable :: array(:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_4 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_4)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (5)
+                    block
+                        complex(dp), allocatable :: array(:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_5 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_5)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (6)
+                    block
+                        complex(dp), allocatable :: array(:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_6 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_6)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case (7)
+                    block
+                        complex(dp), allocatable :: array(:,:,:,:,:,:,:)
+
+                        call allocate_array_from_shape(array, vshape, stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"'."; return
+                        end if
+
+                        read (io, iostat=stat) array
+                        if (stat /= 0) then
+                            msg = "Failed to read array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        allocate (t_array_cdp_7 :: arrays(i)%array, stat=stat)
+                        if (stat /= 0) then
+                            msg = "Failed to allocate array of type '"//this_type//"' "//&
+                            & 'with total size of '//to_string(product(vshape)); return
+                        end if
+
+                        select type (typed_array => arrays(i)%array)
+                          class is (t_array_cdp_7)
+                            typed_array%values = array
+                          class default
+                            msg = 'Failed to allocate values.'; stat = 1; return
+                        end select
+
+                        arrays(i)%array%name = array_name
+                    end block
+                  case default
+                    stat = 1; msg = 'Unsupported rank for array of type '//this_type//': '// &
+                    & to_string(size(vshape))//'.'; return
+                end select
+              case default
+                stat = 1; msg = 'Unsupported array type: '//this_type//'.'; return
+            end select
+
+            close (io, status='delete')
+            if (stat /= 0) return
         end do
     end
 
