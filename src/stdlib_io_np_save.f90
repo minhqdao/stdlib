@@ -7,7 +7,7 @@ submodule(stdlib_io_np) stdlib_io_np_save
     use stdlib_error, only: error_stop
     use stdlib_filesystem, only: run
     use stdlib_strings, only: to_string
-    use stdlib_string_type, only: string_type, char
+    use stdlib_string_type, only: string_type, as_string => char
     use stdlib_io_zip, only: zip
     implicit none
 
@@ -2083,7 +2083,7 @@ contains
             select type (typed_array => arrays(i)%array)
               class is (t_array_rsp_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2103,7 +2103,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2123,7 +2123,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2143,7 +2143,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2163,7 +2163,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2183,7 +2183,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2203,7 +2203,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2223,7 +2223,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2243,7 +2243,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2263,7 +2263,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2283,7 +2283,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2303,7 +2303,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2323,7 +2323,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2343,7 +2343,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2363,7 +2363,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2383,7 +2383,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2403,7 +2403,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2423,7 +2423,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2443,7 +2443,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2463,7 +2463,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2483,7 +2483,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2503,7 +2503,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2523,7 +2523,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2543,7 +2543,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2563,7 +2563,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2583,7 +2583,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2603,7 +2603,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2623,7 +2623,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2643,7 +2643,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2663,7 +2663,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2683,7 +2683,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2703,7 +2703,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2723,7 +2723,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2743,7 +2743,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2763,7 +2763,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2783,7 +2783,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2803,7 +2803,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2823,7 +2823,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2843,7 +2843,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2863,7 +2863,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2883,7 +2883,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2903,7 +2903,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2923,7 +2923,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2943,7 +2943,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2963,7 +2963,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -2983,7 +2983,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3003,7 +3003,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3023,7 +3023,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3043,7 +3043,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_csp_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3063,7 +3063,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_1)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3083,7 +3083,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_2)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3103,7 +3103,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_3)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3123,7 +3123,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_4)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3143,7 +3143,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_5)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3163,7 +3163,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_6)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3183,7 +3183,7 @@ contains
                 files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_7)
                 do j = 1, size(files)
-                    if (char(files(j)) == typed_array%name) then
+                    if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
                         if (present(iomsg)) iomsg = "Error saving array to file '"//filename// &
                             "': Array with the same name '"//typed_array%name//"' already exists."
@@ -3226,7 +3226,7 @@ contains
         integer :: i, unit
 
         do i = 1, size(files)
-            open(newunit=unit, file=char(files(i)))
+            open(newunit=unit, file=as_string(files(i)))
             close(unit, status="delete")
         end do
     end
