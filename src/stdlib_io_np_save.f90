@@ -2080,7 +2080,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2132,7 +2132,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2184,7 +2184,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2236,7 +2236,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2288,7 +2288,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2340,7 +2340,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2392,7 +2392,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2444,7 +2444,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2496,7 +2496,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2548,7 +2548,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2600,7 +2600,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2652,7 +2652,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2704,7 +2704,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2756,7 +2756,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2808,7 +2808,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2860,7 +2860,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2912,7 +2912,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -2964,7 +2964,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3016,7 +3016,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3068,7 +3068,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3120,7 +3120,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3172,7 +3172,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3224,7 +3224,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3276,7 +3276,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3328,7 +3328,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3380,7 +3380,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3432,7 +3432,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3484,7 +3484,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3536,7 +3536,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3588,7 +3588,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3640,7 +3640,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3692,7 +3692,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3744,7 +3744,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3796,7 +3796,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3848,7 +3848,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3900,7 +3900,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -3952,7 +3952,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4004,7 +4004,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4056,7 +4056,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4108,7 +4108,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4160,7 +4160,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4212,7 +4212,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4264,7 +4264,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4316,7 +4316,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4368,7 +4368,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4420,7 +4420,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4472,7 +4472,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4524,7 +4524,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4576,7 +4576,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4628,7 +4628,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4680,7 +4680,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4732,7 +4732,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4784,7 +4784,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4836,7 +4836,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4888,7 +4888,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
@@ -4940,7 +4940,7 @@ contains
             t_arr%name = name
         else
             if (allocated(arrays)) then
-                t_arr%name = "arr_"//trim(to_string(size(arrays)))//".npy"
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
             else
                 t_arr%name = "arr_0.npy"
             end if
