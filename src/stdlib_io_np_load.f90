@@ -53,7 +53,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -116,7 +116,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -179,7 +179,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -242,7 +242,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -305,7 +305,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -368,7 +368,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -431,7 +431,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rsp_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -494,7 +494,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -557,7 +557,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -620,7 +620,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -683,7 +683,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -746,7 +746,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -809,7 +809,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -872,7 +872,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_rdp_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -935,7 +935,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -998,7 +998,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1061,7 +1061,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1124,7 +1124,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1187,7 +1187,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1250,7 +1250,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1313,7 +1313,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint8_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1376,7 +1376,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1439,7 +1439,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1502,7 +1502,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1565,7 +1565,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1628,7 +1628,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1691,7 +1691,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1754,7 +1754,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint16_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1817,7 +1817,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1880,7 +1880,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -1943,7 +1943,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2006,7 +2006,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2069,7 +2069,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2132,7 +2132,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2195,7 +2195,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint32_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2258,7 +2258,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2321,7 +2321,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2384,7 +2384,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2447,7 +2447,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2510,7 +2510,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2573,7 +2573,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2636,7 +2636,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_iint64_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2699,7 +2699,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2762,7 +2762,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2825,7 +2825,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2888,7 +2888,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -2951,7 +2951,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3014,7 +3014,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3077,7 +3077,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_csp_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3140,7 +3140,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_1(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3203,7 +3203,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_2(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3266,7 +3266,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_3(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3329,7 +3329,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_4(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3392,7 +3392,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_5(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3455,7 +3455,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_6(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3518,7 +3518,7 @@ contains
                 exit catch
             end if
 
-            call allocate_array_from_shape(array, vshape, stat)
+            call allocate_array_from_shape_cdp_7(array, vshape, stat)
             if (stat /= 0) then
                 msg = "Failed to allocate array of type '"//vtype//"' "//&
                 & "with total size of "//to_string(product(vshape))
@@ -3542,7 +3542,7 @@ contains
         if (present(iomsg).and.allocated(msg)) call move_alloc(msg, iomsg)
     end
 
-    module subroutine allocate_array_from_shape_rsp_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_1(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3551,7 +3551,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_2(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3561,7 +3561,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_3(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3572,7 +3572,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_4(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3584,7 +3584,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_5(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3597,7 +3597,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_6(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3611,7 +3611,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rsp_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_rsp_7(array, vshape, stat)
         real(sp), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3626,7 +3626,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_1(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3635,7 +3635,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_2(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3645,7 +3645,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_3(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3656,7 +3656,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_4(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3668,7 +3668,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_5(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3681,7 +3681,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_6(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3695,7 +3695,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_rdp_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_rdp_7(array, vshape, stat)
         real(dp), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3710,7 +3710,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_1(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3719,7 +3719,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_2(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3729,7 +3729,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_3(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3740,7 +3740,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_4(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3752,7 +3752,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_5(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3765,7 +3765,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_6(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3779,7 +3779,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint8_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint8_7(array, vshape, stat)
         integer(int8), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3794,7 +3794,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_1(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3803,7 +3803,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_2(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3813,7 +3813,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_3(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3824,7 +3824,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_4(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3836,7 +3836,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_5(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3849,7 +3849,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_6(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3863,7 +3863,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint16_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint16_7(array, vshape, stat)
         integer(int16), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3878,7 +3878,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_1(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3887,7 +3887,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_2(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3897,7 +3897,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_3(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3908,7 +3908,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_4(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3920,7 +3920,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_5(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3933,7 +3933,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_6(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3947,7 +3947,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint32_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint32_7(array, vshape, stat)
         integer(int32), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3962,7 +3962,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_1(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3971,7 +3971,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_2(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3981,7 +3981,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_3(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -3992,7 +3992,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_4(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4004,7 +4004,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_5(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4017,7 +4017,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_6(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4031,7 +4031,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_iint64_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_iint64_7(array, vshape, stat)
         integer(int64), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4046,7 +4046,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_1(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4055,7 +4055,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_2(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4065,7 +4065,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_3(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4076,7 +4076,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_4(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4088,7 +4088,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_5(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4101,7 +4101,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_6(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4115,7 +4115,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_csp_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_csp_7(array, vshape, stat)
         complex(sp), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4130,7 +4130,7 @@ contains
         &    vshape(7)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_1(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_1(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4139,7 +4139,7 @@ contains
         &    vshape(1)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_2(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_2(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4149,7 +4149,7 @@ contains
         &    vshape(2)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_3(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_3(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4160,7 +4160,7 @@ contains
         &    vshape(3)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_4(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_4(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4172,7 +4172,7 @@ contains
         &    vshape(4)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_5(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_5(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4185,7 +4185,7 @@ contains
         &    vshape(5)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_6(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_6(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4199,7 +4199,7 @@ contains
         &    vshape(6)), &
         &    stat=stat)
     end
-    module subroutine allocate_array_from_shape_cdp_7(array, vshape, stat)
+    subroutine allocate_array_from_shape_cdp_7(array, vshape, stat)
         complex(dp), allocatable, intent(out) :: array(:,:,:,:,:,:,:)
         integer, intent(in) :: vshape(:)
         integer, intent(out) :: stat
@@ -4292,7 +4292,7 @@ contains
                     block
                         real(sp), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4326,7 +4326,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4360,7 +4360,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4394,7 +4394,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4428,7 +4428,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4462,7 +4462,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4496,7 +4496,7 @@ contains
                     block
                         real(sp), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rsp_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4537,7 +4537,7 @@ contains
                     block
                         real(dp), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4571,7 +4571,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4605,7 +4605,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4639,7 +4639,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4673,7 +4673,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4707,7 +4707,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4741,7 +4741,7 @@ contains
                     block
                         real(dp), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_rdp_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4782,7 +4782,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4816,7 +4816,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4850,7 +4850,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4884,7 +4884,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4918,7 +4918,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4952,7 +4952,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -4986,7 +4986,7 @@ contains
                     block
                         integer(int8), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint8_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5027,7 +5027,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5061,7 +5061,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5095,7 +5095,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5129,7 +5129,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5163,7 +5163,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5197,7 +5197,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5231,7 +5231,7 @@ contains
                     block
                         integer(int16), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint16_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5272,7 +5272,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5306,7 +5306,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5340,7 +5340,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5374,7 +5374,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5408,7 +5408,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5442,7 +5442,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5476,7 +5476,7 @@ contains
                     block
                         integer(int32), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint32_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5517,7 +5517,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5551,7 +5551,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5585,7 +5585,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5619,7 +5619,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5653,7 +5653,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5687,7 +5687,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5721,7 +5721,7 @@ contains
                     block
                         integer(int64), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_iint64_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5762,7 +5762,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5796,7 +5796,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5830,7 +5830,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5864,7 +5864,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5898,7 +5898,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5932,7 +5932,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -5966,7 +5966,7 @@ contains
                     block
                         complex(sp), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_csp_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6007,7 +6007,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_1(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6041,7 +6041,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_2(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6075,7 +6075,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_3(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6109,7 +6109,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_4(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6143,7 +6143,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_5(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6177,7 +6177,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_6(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
@@ -6211,7 +6211,7 @@ contains
                     block
                         complex(dp), allocatable :: array(:,:,:,:,:,:,:)
 
-                        call allocate_array_from_shape(array, vshape, stat)
+                        call allocate_array_from_shape_cdp_7(array, vshape, stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"'.";
                             close(io, status='delete'); return
