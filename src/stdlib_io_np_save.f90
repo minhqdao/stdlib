@@ -2065,8 +2065,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2093,8 +2094,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2102,9 +2102,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2118,8 +2117,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2146,8 +2146,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2155,9 +2154,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2171,8 +2169,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2199,8 +2198,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2208,9 +2206,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2224,8 +2221,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2252,8 +2250,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2261,9 +2258,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2277,8 +2273,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2305,8 +2302,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2314,9 +2310,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2330,8 +2325,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2358,8 +2354,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2367,9 +2362,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2383,8 +2377,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rsp_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2411,8 +2406,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2420,9 +2414,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2436,8 +2429,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2464,8 +2458,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2473,9 +2466,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2489,8 +2481,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2517,8 +2510,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2526,9 +2518,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2542,8 +2533,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2570,8 +2562,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2579,9 +2570,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2595,8 +2585,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2623,8 +2614,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2632,9 +2622,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2648,8 +2637,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2676,8 +2666,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2685,9 +2674,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2701,8 +2689,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2729,8 +2718,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2738,9 +2726,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2754,8 +2741,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_rdp_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2782,8 +2770,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2791,9 +2778,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2807,8 +2793,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2835,8 +2822,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2844,9 +2830,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2860,8 +2845,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2888,8 +2874,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2897,9 +2882,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2913,8 +2897,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2941,8 +2926,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -2950,9 +2934,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2966,8 +2949,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -2994,8 +2978,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3003,9 +2986,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3019,8 +3001,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3047,8 +3030,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3056,9 +3038,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3072,8 +3053,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3100,8 +3082,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3109,9 +3090,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3125,8 +3105,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint8_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3153,8 +3134,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3162,9 +3142,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3178,8 +3157,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3206,8 +3186,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3215,9 +3194,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3231,8 +3209,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3259,8 +3238,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3268,9 +3246,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3284,8 +3261,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3312,8 +3290,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3321,9 +3298,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3337,8 +3313,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3365,8 +3342,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3374,9 +3350,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3390,8 +3365,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3418,8 +3394,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3427,9 +3402,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3443,8 +3417,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3471,8 +3446,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3480,9 +3454,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3496,8 +3469,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint16_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3524,8 +3498,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3533,9 +3506,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3549,8 +3521,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3577,8 +3550,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3586,9 +3558,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3602,8 +3573,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3630,8 +3602,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3639,9 +3610,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3655,8 +3625,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3683,8 +3654,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3692,9 +3662,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3708,8 +3677,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3736,8 +3706,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3745,9 +3714,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3761,8 +3729,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3789,8 +3758,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3798,9 +3766,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3814,8 +3781,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3842,8 +3810,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3851,9 +3818,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3867,8 +3833,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint32_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3895,8 +3862,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3904,9 +3870,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3920,8 +3885,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -3948,8 +3914,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -3957,9 +3922,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3973,8 +3937,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4001,8 +3966,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4010,9 +3974,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4026,8 +3989,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4054,8 +4018,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4063,9 +4026,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4079,8 +4041,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4107,8 +4070,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4116,9 +4078,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4132,8 +4093,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4160,8 +4122,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4169,9 +4130,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4185,8 +4145,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4213,8 +4174,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4222,9 +4182,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4238,8 +4197,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_iint64_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4266,8 +4226,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4275,9 +4234,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4291,8 +4249,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4319,8 +4278,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4328,9 +4286,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4344,8 +4301,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4372,8 +4330,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4381,9 +4338,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4397,8 +4353,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4425,8 +4382,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4434,9 +4390,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4450,8 +4405,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4478,8 +4434,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4487,9 +4442,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4503,8 +4457,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4531,8 +4486,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4540,9 +4494,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4556,8 +4509,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4584,8 +4538,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4593,9 +4546,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4609,8 +4561,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_csp_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4637,8 +4590,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4646,9 +4598,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4662,8 +4613,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_1) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4690,8 +4642,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4699,9 +4650,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4715,8 +4665,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_2) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4743,8 +4694,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4752,9 +4702,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4768,8 +4717,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_3) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4796,8 +4746,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4805,9 +4754,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4821,8 +4769,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_4) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4849,8 +4798,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4858,9 +4806,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4874,8 +4821,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_5) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4902,8 +4850,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4911,9 +4858,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4927,8 +4873,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_6) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -4955,8 +4902,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -4964,9 +4910,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4980,8 +4925,9 @@ contains
         !> Name of the array to be added. A default name will be used if not provided.
         character(len=*), intent(in), optional :: name
 
-        integer :: i, arr_size
+        integer :: i
         type(t_array_cdp_7) :: t_arr
+        type(t_array_wrapper) :: wrapper
 
         if (present(stat)) stat = 0
 
@@ -5008,8 +4954,7 @@ contains
             return
         end if
 
-        arr_size = size(arrays)
-        do i = 1, arr_size
+        do i = 1, size(arrays)
             if (arrays(i)%array%name == t_arr%name) then
                 if (present(stat)) stat = 1
                 if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
@@ -5017,9 +4962,8 @@ contains
             end if
         end do
 
-        arr_size = arr_size + 1
-        allocate(arrays(arr_size))
-        arrays(arr_size)%array = t_arr
+        wrapper%array = t_arr
+        arrays = [arrays, wrapper]
     end
 
     !> Version: experimental
