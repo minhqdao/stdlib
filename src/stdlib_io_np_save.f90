@@ -4986,7 +4986,6 @@ contains
         logical :: is_compressed
         character(len=:), allocatable :: msg
         type(string_type), allocatable :: files(:)
-        type(string_type) :: new_string
 
         if (present(iostat)) iostat = 0
         stat = 0
@@ -5019,8 +5018,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5040,8 +5038,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5061,8 +5058,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5082,8 +5078,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5103,8 +5098,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5124,8 +5118,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rsp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5145,8 +5138,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5166,8 +5158,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5187,8 +5178,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5208,8 +5198,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5229,8 +5218,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5250,8 +5238,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5271,8 +5258,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_rdp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5292,8 +5278,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5313,8 +5298,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5334,8 +5318,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5355,8 +5338,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5376,8 +5358,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5397,8 +5378,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5418,8 +5398,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint8_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5439,8 +5418,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5460,8 +5438,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5481,8 +5458,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5502,8 +5478,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5523,8 +5498,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5544,8 +5518,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5565,8 +5538,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint16_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5586,8 +5558,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5607,8 +5578,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5628,8 +5598,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5649,8 +5618,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5670,8 +5638,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5691,8 +5658,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5712,8 +5678,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint32_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5733,8 +5698,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5754,8 +5718,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5775,8 +5738,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5796,8 +5758,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5817,8 +5778,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5838,8 +5798,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5859,8 +5818,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_iint64_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5880,8 +5838,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5901,8 +5858,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5922,8 +5878,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5943,8 +5898,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5964,8 +5918,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -5985,8 +5938,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6006,8 +5958,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_csp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6027,8 +5978,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6048,8 +5998,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6069,8 +6018,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6090,8 +6038,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6111,8 +6058,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6132,8 +6078,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6153,8 +6098,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class is (t_array_cdp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
@@ -6174,8 +6118,7 @@ contains
                     return
                 end if
 
-                new_string = string_type(typed_array%name)
-                files = [files, new_string]
+                files = [files, string_type(typed_array%name)]
               class default
                 if (present(iostat)) iostat = 1
                 if (present(iomsg)) iomsg = "Error saving array to file '"//filename//"': Unsupported array type."
@@ -6184,6 +6127,19 @@ contains
             end select
         end do
 
+do j = 1, size(files)
+    print *, as_string(files(j))
+end do
+do j = 1, size(arrays)
+    print *, arrays(j)%array%name
+    select type (typed_array => arrays(1)%array)
+        class is (t_array_rdp_2)
+            print *, typed_array%values
+        class is (t_array_cdp_1)
+            print *, typed_array%values
+        class default
+    end select
+end do
         call zip(filename, files, stat, msg, is_compressed)
         if (stat /= 0) then
             if (present(iostat)) iostat = stat
