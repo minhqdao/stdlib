@@ -2086,7 +2086,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2102,7 +2102,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
@@ -2138,7 +2138,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2154,7 +2154,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
@@ -2190,7 +2190,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2206,7 +2206,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
@@ -2242,7 +2242,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2258,7 +2258,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
@@ -2294,7 +2294,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2310,7 +2310,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
@@ -2346,7 +2346,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2362,7 +2362,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
@@ -2398,7 +2398,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2414,7 +2414,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
@@ -2450,7 +2450,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2466,7 +2466,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
@@ -2502,7 +2502,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2518,7 +2518,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
@@ -2554,7 +2554,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2570,7 +2570,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
@@ -2606,7 +2606,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2622,7 +2622,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
@@ -2658,7 +2658,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2674,7 +2674,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
@@ -2710,7 +2710,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2726,7 +2726,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
@@ -2762,7 +2762,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2778,7 +2778,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
@@ -2814,7 +2814,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2830,7 +2830,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
@@ -2866,7 +2866,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2882,7 +2882,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
@@ -2918,7 +2918,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2934,7 +2934,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
@@ -2970,7 +2970,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -2986,7 +2986,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
@@ -3022,7 +3022,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3038,7 +3038,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
@@ -3074,7 +3074,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3090,7 +3090,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
@@ -3126,7 +3126,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3142,7 +3142,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
@@ -3178,7 +3178,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3194,7 +3194,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
@@ -3230,7 +3230,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3246,7 +3246,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
@@ -3282,7 +3282,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3298,7 +3298,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
@@ -3334,7 +3334,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3350,7 +3350,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
@@ -3386,7 +3386,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3402,7 +3402,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
@@ -3438,7 +3438,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3454,7 +3454,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
@@ -3490,7 +3490,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3506,7 +3506,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
@@ -3542,7 +3542,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3558,7 +3558,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
@@ -3594,7 +3594,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3610,7 +3610,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
@@ -3646,7 +3646,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3662,7 +3662,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
@@ -3698,7 +3698,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3714,7 +3714,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
@@ -3750,7 +3750,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3766,7 +3766,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
@@ -3802,7 +3802,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3818,7 +3818,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
@@ -3854,7 +3854,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3870,7 +3870,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
@@ -3906,7 +3906,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3922,7 +3922,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
@@ -3958,7 +3958,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -3974,7 +3974,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
@@ -4010,7 +4010,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4026,7 +4026,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
@@ -4062,7 +4062,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4078,7 +4078,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
@@ -4114,7 +4114,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4130,7 +4130,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
@@ -4166,7 +4166,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4182,7 +4182,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
@@ -4218,7 +4218,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4234,7 +4234,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_1(arrays, array, stat, msg, name)
@@ -4270,7 +4270,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4286,7 +4286,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_2(arrays, array, stat, msg, name)
@@ -4322,7 +4322,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4338,7 +4338,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_3(arrays, array, stat, msg, name)
@@ -4374,7 +4374,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4390,7 +4390,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_4(arrays, array, stat, msg, name)
@@ -4426,7 +4426,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4442,7 +4442,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_5(arrays, array, stat, msg, name)
@@ -4478,7 +4478,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4494,7 +4494,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_6(arrays, array, stat, msg, name)
@@ -4530,7 +4530,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4546,7 +4546,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_csp_7(arrays, array, stat, msg, name)
@@ -4582,7 +4582,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4598,7 +4598,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
@@ -4634,7 +4634,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4650,7 +4650,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
@@ -4686,7 +4686,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4702,7 +4702,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
@@ -4738,7 +4738,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4754,7 +4754,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
@@ -4790,7 +4790,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4806,7 +4806,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
@@ -4842,7 +4842,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4858,7 +4858,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
@@ -4894,7 +4894,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4910,7 +4910,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
     module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
@@ -4946,7 +4946,7 @@ contains
             end if
         end if
 
-        t_arr%values = array
+        allocate(t_arr%values, source=array)
 
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
@@ -4962,7 +4962,7 @@ contains
             end if
         end do
 
-        wrapper%array = t_arr
+        allocate(wrapper%array, source=t_arr)
         arrays = [arrays, wrapper]
     end
 
