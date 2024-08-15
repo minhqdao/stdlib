@@ -4314,7 +4314,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4348,7 +4348,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4382,7 +4382,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4416,7 +4416,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4450,7 +4450,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4484,7 +4484,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4518,7 +4518,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rsp_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4559,7 +4559,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4593,7 +4593,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4627,7 +4627,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4661,7 +4661,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4695,7 +4695,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4729,7 +4729,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4763,7 +4763,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_rdp_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4804,7 +4804,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4838,7 +4838,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4872,7 +4872,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4906,7 +4906,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4940,7 +4940,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -4974,7 +4974,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5008,7 +5008,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint8_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5049,7 +5049,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5083,7 +5083,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5117,7 +5117,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5151,7 +5151,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5185,7 +5185,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5219,7 +5219,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5253,7 +5253,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint16_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5294,7 +5294,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5328,7 +5328,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5362,7 +5362,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5396,7 +5396,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5430,7 +5430,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5464,7 +5464,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5498,7 +5498,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint32_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5539,7 +5539,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5573,7 +5573,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5607,7 +5607,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5641,7 +5641,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5675,7 +5675,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5709,7 +5709,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5743,7 +5743,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_iint64_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5784,7 +5784,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5818,7 +5818,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5852,7 +5852,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5886,7 +5886,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5920,7 +5920,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5954,7 +5954,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -5988,7 +5988,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_csp_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6029,7 +6029,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_1)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6063,7 +6063,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_2)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6097,7 +6097,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_3)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6131,7 +6131,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_4)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6165,7 +6165,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_5)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6199,7 +6199,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_6)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
@@ -6233,7 +6233,7 @@ contains
 
                         select type (typed_array => arrays(i)%array)
                           class is (t_array_cdp_7)
-                            typed_array%values = array
+                            allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
                             close(io, status='delete'); return
