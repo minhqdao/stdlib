@@ -4971,9 +4971,13 @@ contains
     !> Save multidimensional arrays to a compressed or an uncompressed npz file.
     !> ([Specification](../page/specs/stdlib_io.html#save_npz))
     module subroutine save_arrays_to_npz(filename, arrays, iostat, iomsg, compressed)
+        !> Name of the npz file to save to.
         character(len=*), intent(in) :: filename
+        !> Array of arrays to be saved.
         type(t_array_wrapper), intent(in) :: arrays(:)
+        !> Optional error status of saving, zero on success.
         integer, intent(out), optional :: iostat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: iomsg
         !> If true, the file is saved in compressed format. The default is false.
         logical, intent(in), optional :: compressed
@@ -4991,7 +4995,7 @@ contains
             is_compressed = .false.
         end if
 
-        allocate(files(size(arrays)))
+        if (.not. allocated(files)) allocate(files(0))
         do i = 1, size(arrays)
             select type (typed_array => arrays(i)%array)
               class is (t_array_rsp_1)
