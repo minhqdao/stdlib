@@ -4988,6 +4988,7 @@ contains
         type(string_type), allocatable :: files(:)
 
         if (present(iostat)) iostat = 0
+        stat = 0
 
         if (present(compressed)) then
             is_compressed = compressed
