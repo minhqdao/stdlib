@@ -2103,18 +2103,21 @@ contains
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2176,18 +2179,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2249,18 +2255,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2322,18 +2331,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2395,18 +2407,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2468,18 +2483,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2541,18 +2559,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2614,18 +2635,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2687,18 +2711,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2760,18 +2787,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2833,18 +2863,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2906,18 +2939,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -2979,18 +3015,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3052,18 +3091,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3125,18 +3167,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3198,18 +3243,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3271,18 +3319,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3344,18 +3395,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3417,18 +3471,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3490,18 +3547,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3563,18 +3623,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3636,18 +3699,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3709,18 +3775,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3782,18 +3851,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3855,18 +3927,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -3928,18 +4003,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4001,18 +4079,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4074,18 +4155,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4147,18 +4231,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4220,18 +4307,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4293,18 +4383,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4366,18 +4459,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4439,18 +4535,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4512,18 +4611,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4585,18 +4687,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4658,18 +4763,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4731,18 +4839,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4804,18 +4915,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4877,18 +4991,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -4950,18 +5067,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5023,18 +5143,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5096,18 +5219,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5169,18 +5295,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5242,18 +5371,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5315,18 +5447,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5388,18 +5523,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5461,18 +5599,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5534,18 +5675,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5607,18 +5751,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5680,18 +5827,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5753,18 +5903,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5826,18 +5979,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5899,18 +6055,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -5972,18 +6131,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -6045,18 +6207,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
@@ -6118,18 +6283,21 @@ end do
 
         allocate(wrapper%array, source=t_arr)
 
-print *, 'wrapper: '
-select type (typed_array => wrapper%array)
-  class is (t_array_rdp_2)
-    print *, typed_array%values
-  class is (t_array_cdp_1)
-    print *, typed_array%values
-  class default
-end select
+print *, 'before adding to arrays'
+do i = 1, size(arrays)
+    print *, arrays(i)%array%name
+    select type (typed_array => arrays(i)%array)
+      class is (t_array_rdp_2)
+        print *, typed_array%values
+      class is (t_array_cdp_1)
+        print *, typed_array%values
+      class default
+    end select
+end do
 
         arrays = [arrays, wrapper]
 
-print *, 'after allocating arrays'
+print *, 'after adding to arrays'
 do i = 1, size(arrays)
     print *, arrays(i)%array%name
     select type (typed_array => arrays(i)%array)
