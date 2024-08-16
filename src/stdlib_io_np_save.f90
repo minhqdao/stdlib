@@ -2088,6 +2088,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2103,7 +2106,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2140,6 +2167,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2155,7 +2185,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2192,6 +2246,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2207,7 +2264,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2244,6 +2325,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2259,7 +2343,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2296,6 +2404,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2311,7 +2422,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2348,6 +2483,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2363,7 +2501,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2400,6 +2562,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2415,7 +2580,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2452,6 +2641,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2467,7 +2659,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2504,6 +2720,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2519,7 +2738,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2556,6 +2799,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2571,7 +2817,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2608,6 +2878,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2623,7 +2896,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2660,6 +2957,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2675,7 +2975,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2712,6 +3036,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2727,7 +3054,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2764,6 +3115,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2779,7 +3133,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2816,6 +3194,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2831,7 +3212,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2868,6 +3273,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2883,7 +3291,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2920,6 +3352,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2935,7 +3370,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -2972,6 +3431,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -2987,7 +3449,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3024,6 +3510,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3039,7 +3528,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3076,6 +3589,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3091,7 +3607,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3128,6 +3668,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3143,7 +3686,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3180,6 +3747,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3195,7 +3765,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3232,6 +3826,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3247,7 +3844,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3284,6 +3905,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3299,7 +3923,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3336,6 +3984,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3351,7 +4002,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3388,6 +4063,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3403,7 +4081,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3440,6 +4142,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3455,7 +4160,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3492,6 +4221,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3507,7 +4239,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3544,6 +4300,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3559,7 +4318,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3596,6 +4379,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3611,7 +4397,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3648,6 +4458,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3663,7 +4476,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3700,6 +4537,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3715,7 +4555,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3752,6 +4616,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3767,7 +4634,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3804,6 +4695,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3819,7 +4713,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3856,6 +4774,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3871,7 +4792,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3908,6 +4853,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3923,7 +4871,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -3960,6 +4932,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -3975,7 +4950,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4012,6 +5011,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4027,7 +5029,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4064,6 +5090,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4079,7 +5108,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4116,6 +5169,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4131,7 +5187,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4168,6 +5248,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4183,7 +5266,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4220,6 +5327,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4235,7 +5345,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4272,6 +5406,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4287,7 +5424,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4324,6 +5485,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4339,7 +5503,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4376,6 +5564,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4391,7 +5582,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4428,6 +5643,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4443,7 +5661,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4480,6 +5722,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4495,7 +5740,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4532,6 +5801,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4547,7 +5819,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_csp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4584,6 +5880,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4599,7 +5898,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4636,6 +5959,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4651,7 +5977,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4688,6 +6038,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4703,7 +6056,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4740,6 +6117,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4755,7 +6135,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4792,6 +6196,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4807,7 +6214,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4844,6 +6275,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4859,7 +6293,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4896,6 +6354,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4911,7 +6372,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
     module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
@@ -4948,6 +6433,9 @@ contains
 
         allocate(t_arr%values, source=array)
 
+print *, 'after allocating values'
+print *, array
+
         if (.not. allocated(arrays)) then
             allocate(arrays(1))
             allocate(arrays(1)%array, source=t_arr)
@@ -4963,7 +6451,31 @@ contains
         end do
 
         allocate(wrapper%array, source=t_arr)
+
+print *, 'after allocating wrapper'
+print *, 't_arr: ', t_arr%values
+print *, 'wrapper: '
+select type (typed_array => wrapper%array)
+  class is (t_array_rdp_2)
+    print *, typed_array%values
+  class is (t_array_cdp_1)
+    print *, typed_array%values
+  class default
+end select
+
         arrays = [arrays, wrapper]
+
+! print *, 'after allocating arrays'
+! do i = 1, size(arrays)
+!     print *, arrays(i)%array%name
+!     select type (typed_array => arrays(i)%array)
+!       class is (t_array_rdp_2)
+!         print *, typed_array%values
+!       class is (t_array_cdp_1)
+!         print *, typed_array%values
+!       class default
+!     end select
+! end do
     end
 
     !> Version: experimental
