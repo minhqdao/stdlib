@@ -6,10 +6,11 @@
 !> The specification of this module is available [here](../page/specs/stdlib_array.html).
 module stdlib_array
     use stdlib_kinds, only: int8, int16, int32, int64, sp, dp, xdp, qp
+    use stdlib_strings, only: to_string
     implicit none
     private
 
-    public :: trueloc, falseloc
+    public :: add_array, trueloc, falseloc
 
     !> Helper class to allocate t_array as an abstract type.
     type, public :: t_array_wrapper
@@ -189,7 +190,3763 @@ module stdlib_array
         complex(dp), allocatable :: values(:,:,:,:,:,:,:)
     end type
 
+    interface add_array
+        module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(sp), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            real(dp), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int8), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int16), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int32), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            integer(int64), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_csp_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(sp), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+        module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
+            !> Array of arrays to which the array is to be added.
+            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            !> Array to be added.
+            complex(dp), intent(in) :: array(:,:,:,:,:,:,:)
+            !> Status of addition.
+            integer, intent(out), optional :: stat
+            !> Error message.
+            character(len=:), allocatable, intent(out), optional :: msg
+            !> Name of the array to be added. A default name will be used if not provided.
+            character(len=*), intent(in), optional :: name
+        end
+    end interface
+
 contains
+
+    module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(sp), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rsp_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        real(dp), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_rdp_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int8), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint8_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int16), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint16_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int32), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint32_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        integer(int64), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_iint64_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_csp_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(sp), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_csp_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_1) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_2) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_3) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_4) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_5) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_6) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
+    module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
+        !> Array of arrays to which the array is to be added.
+        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+        !> Array to be added.
+        complex(dp), intent(in) :: array(:,:,:,:,:,:,:)
+        !> Status of addition.
+        integer, intent(out), optional :: stat
+        !> Error message.
+        character(len=:), allocatable, intent(out), optional :: msg
+        !> Name of the array to be added. A default name will be used if not provided.
+        character(len=*), intent(in), optional :: name
+
+        integer :: i, arr_size
+        type(t_array_cdp_7) :: t_arr
+        type(t_array_wrapper), allocatable :: tmp_arrays(:)
+
+
+        if (present(stat)) stat = 0
+
+        if (present(name)) then
+            if (trim(name) == '') then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array name cannot be empty."
+                return
+            end if
+            t_arr%name = name
+        else
+            if (allocated(arrays)) then
+                t_arr%name = "arr_"//to_string(size(arrays))//".npy"
+            else
+                t_arr%name = "arr_0.npy"
+            end if
+        end if
+
+        allocate(t_arr%values, source=array)
+        if (.not. allocated(arrays)) then
+            allocate(arrays(1))
+            allocate(arrays(1)%array, source=t_arr)
+            return
+        end if
+
+        arr_size = size(arrays)
+        do i = 1, arr_size
+            if (arrays(i)%array%name == t_arr%name) then
+                if (present(stat)) stat = 1
+                if (present(msg)) msg = "Array with the same name '"//t_arr%name//"' already exists."
+                return
+            end if
+        end do
+
+        allocate(tmp_arrays(arr_size + 1))
+        tmp_arrays(:arr_size) = arrays
+        allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
+        call move_alloc(tmp_arrays, arrays)
+    end
 
     !> Version: experimental
     !>
