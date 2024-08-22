@@ -4221,7 +4221,7 @@ contains
     !> ([Specification](../page/specs/stdlib_io.html#load_npz))
     module subroutine load_npz_to_arrays(filename, arrays, iostat, iomsg, tmp_dir)
         character(len=*), intent(in) :: filename
-        type(t_array_wrapper), allocatable, intent(out) :: arrays(:)
+        type(array_wrapper_type), allocatable, intent(out) :: arrays(:)
         integer, intent(out), optional :: iostat
         character(len=:), allocatable, intent(out), optional :: iomsg
         character(*), intent(in), optional :: tmp_dir
@@ -4262,7 +4262,7 @@ contains
     subroutine load_unzipped_files_to_arrays(files, dir, arrays, stat, msg)
         type(string_type), intent(in) :: files(:)
         character(len=*), intent(in) :: dir
-        type(t_array_wrapper), allocatable, intent(out) :: arrays(:)
+        type(array_wrapper_type), allocatable, intent(out) :: arrays(:)
         integer, intent(out) :: stat
         character(len=:), allocatable, intent(out) :: msg
 
@@ -4305,7 +4305,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4313,7 +4313,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_1)
+                          class is (array_type_rsp_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4339,7 +4339,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4347,7 +4347,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_2)
+                          class is (array_type_rsp_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4373,7 +4373,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4381,7 +4381,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_3)
+                          class is (array_type_rsp_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4407,7 +4407,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4415,7 +4415,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_4)
+                          class is (array_type_rsp_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4441,7 +4441,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4449,7 +4449,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_5)
+                          class is (array_type_rsp_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4475,7 +4475,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4483,7 +4483,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_6)
+                          class is (array_type_rsp_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4509,7 +4509,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rsp_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rsp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4517,7 +4517,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rsp_7)
+                          class is (array_type_rsp_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4550,7 +4550,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4558,7 +4558,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_1)
+                          class is (array_type_rdp_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4584,7 +4584,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4592,7 +4592,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_2)
+                          class is (array_type_rdp_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4618,7 +4618,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4626,7 +4626,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_3)
+                          class is (array_type_rdp_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4652,7 +4652,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4660,7 +4660,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_4)
+                          class is (array_type_rdp_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4686,7 +4686,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4694,7 +4694,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_5)
+                          class is (array_type_rdp_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4720,7 +4720,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4728,7 +4728,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_6)
+                          class is (array_type_rdp_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4754,7 +4754,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_rdp_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_rdp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4762,7 +4762,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_rdp_7)
+                          class is (array_type_rdp_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4795,7 +4795,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4803,7 +4803,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_1)
+                          class is (array_type_iint8_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4829,7 +4829,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4837,7 +4837,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_2)
+                          class is (array_type_iint8_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4863,7 +4863,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4871,7 +4871,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_3)
+                          class is (array_type_iint8_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4897,7 +4897,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4905,7 +4905,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_4)
+                          class is (array_type_iint8_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4931,7 +4931,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4939,7 +4939,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_5)
+                          class is (array_type_iint8_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4965,7 +4965,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -4973,7 +4973,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_6)
+                          class is (array_type_iint8_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -4999,7 +4999,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint8_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint8_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5007,7 +5007,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint8_7)
+                          class is (array_type_iint8_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5040,7 +5040,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5048,7 +5048,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_1)
+                          class is (array_type_iint16_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5074,7 +5074,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5082,7 +5082,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_2)
+                          class is (array_type_iint16_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5108,7 +5108,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5116,7 +5116,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_3)
+                          class is (array_type_iint16_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5142,7 +5142,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5150,7 +5150,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_4)
+                          class is (array_type_iint16_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5176,7 +5176,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5184,7 +5184,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_5)
+                          class is (array_type_iint16_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5210,7 +5210,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5218,7 +5218,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_6)
+                          class is (array_type_iint16_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5244,7 +5244,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint16_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint16_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5252,7 +5252,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint16_7)
+                          class is (array_type_iint16_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5285,7 +5285,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5293,7 +5293,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_1)
+                          class is (array_type_iint32_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5319,7 +5319,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5327,7 +5327,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_2)
+                          class is (array_type_iint32_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5353,7 +5353,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5361,7 +5361,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_3)
+                          class is (array_type_iint32_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5387,7 +5387,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5395,7 +5395,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_4)
+                          class is (array_type_iint32_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5421,7 +5421,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5429,7 +5429,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_5)
+                          class is (array_type_iint32_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5455,7 +5455,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5463,7 +5463,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_6)
+                          class is (array_type_iint32_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5489,7 +5489,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint32_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint32_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5497,7 +5497,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint32_7)
+                          class is (array_type_iint32_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5530,7 +5530,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5538,7 +5538,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_1)
+                          class is (array_type_iint64_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5564,7 +5564,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5572,7 +5572,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_2)
+                          class is (array_type_iint64_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5598,7 +5598,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5606,7 +5606,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_3)
+                          class is (array_type_iint64_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5632,7 +5632,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5640,7 +5640,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_4)
+                          class is (array_type_iint64_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5666,7 +5666,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5674,7 +5674,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_5)
+                          class is (array_type_iint64_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5700,7 +5700,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5708,7 +5708,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_6)
+                          class is (array_type_iint64_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5734,7 +5734,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_iint64_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_iint64_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5742,7 +5742,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_iint64_7)
+                          class is (array_type_iint64_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5775,7 +5775,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5783,7 +5783,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_1)
+                          class is (array_type_csp_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5809,7 +5809,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5817,7 +5817,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_2)
+                          class is (array_type_csp_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5843,7 +5843,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5851,7 +5851,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_3)
+                          class is (array_type_csp_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5877,7 +5877,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5885,7 +5885,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_4)
+                          class is (array_type_csp_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5911,7 +5911,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5919,7 +5919,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_5)
+                          class is (array_type_csp_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5945,7 +5945,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5953,7 +5953,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_6)
+                          class is (array_type_csp_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -5979,7 +5979,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_csp_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_csp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -5987,7 +5987,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_csp_7)
+                          class is (array_type_csp_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6020,7 +6020,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_1 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_1 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6028,7 +6028,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_1)
+                          class is (array_type_cdp_1)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6054,7 +6054,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_2 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_2 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6062,7 +6062,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_2)
+                          class is (array_type_cdp_2)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6088,7 +6088,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_3 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_3 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6096,7 +6096,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_3)
+                          class is (array_type_cdp_3)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6122,7 +6122,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_4 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_4 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6130,7 +6130,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_4)
+                          class is (array_type_cdp_4)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6156,7 +6156,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_5 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_5 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6164,7 +6164,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_5)
+                          class is (array_type_cdp_5)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6190,7 +6190,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_6 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_6 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6198,7 +6198,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_6)
+                          class is (array_type_cdp_6)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1
@@ -6224,7 +6224,7 @@ contains
                             close(io, status='delete'); return
                         end if
 
-                        allocate(t_array_cdp_7 :: arrays(i)%array, stat=stat)
+                        allocate(array_type_cdp_7 :: arrays(i)%array, stat=stat)
                         if (stat /= 0) then
                             msg = "Failed to allocate array of type '"//this_type//"' "//&
                             & 'with total size of '//to_string(product(vshape))
@@ -6232,7 +6232,7 @@ contains
                         end if
 
                         select type (typed_array => arrays(i)%array)
-                          class is (t_array_cdp_7)
+                          class is (array_type_cdp_7)
                             allocate(typed_array%values, source=array)
                           class default
                             msg = 'Failed to allocate values.'; stat = 1

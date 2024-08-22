@@ -2061,7 +2061,7 @@ contains
         !> Name of the npz file to save to.
         character(len=*), intent(in) :: filename
         !> Arrays to be saved.
-        type(t_array_wrapper), intent(in) :: arrays(:)
+        type(array_wrapper_type), intent(in) :: arrays(:)
         !> Optional error status of saving, zero on success.
         integer, intent(out), optional :: iostat
         !> Optional error message.
@@ -2086,7 +2086,7 @@ contains
         allocate(files(0))
         do i = 1, size(arrays)
             select type (typed_array => arrays(i)%array)
-              class is (t_array_rsp_1)
+              class is (array_type_rsp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2106,7 +2106,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_2)
+              class is (array_type_rsp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2126,7 +2126,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_3)
+              class is (array_type_rsp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2146,7 +2146,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_4)
+              class is (array_type_rsp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2166,7 +2166,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_5)
+              class is (array_type_rsp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2186,7 +2186,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_6)
+              class is (array_type_rsp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2206,7 +2206,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rsp_7)
+              class is (array_type_rsp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2226,7 +2226,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_1)
+              class is (array_type_rdp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2246,7 +2246,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_2)
+              class is (array_type_rdp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2266,7 +2266,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_3)
+              class is (array_type_rdp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2286,7 +2286,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_4)
+              class is (array_type_rdp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2306,7 +2306,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_5)
+              class is (array_type_rdp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2326,7 +2326,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_6)
+              class is (array_type_rdp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2346,7 +2346,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_rdp_7)
+              class is (array_type_rdp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2366,7 +2366,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_1)
+              class is (array_type_iint8_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2386,7 +2386,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_2)
+              class is (array_type_iint8_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2406,7 +2406,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_3)
+              class is (array_type_iint8_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2426,7 +2426,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_4)
+              class is (array_type_iint8_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2446,7 +2446,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_5)
+              class is (array_type_iint8_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2466,7 +2466,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_6)
+              class is (array_type_iint8_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2486,7 +2486,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint8_7)
+              class is (array_type_iint8_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2506,7 +2506,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_1)
+              class is (array_type_iint16_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2526,7 +2526,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_2)
+              class is (array_type_iint16_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2546,7 +2546,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_3)
+              class is (array_type_iint16_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2566,7 +2566,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_4)
+              class is (array_type_iint16_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2586,7 +2586,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_5)
+              class is (array_type_iint16_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2606,7 +2606,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_6)
+              class is (array_type_iint16_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2626,7 +2626,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint16_7)
+              class is (array_type_iint16_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2646,7 +2646,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_1)
+              class is (array_type_iint32_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2666,7 +2666,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_2)
+              class is (array_type_iint32_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2686,7 +2686,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_3)
+              class is (array_type_iint32_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2706,7 +2706,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_4)
+              class is (array_type_iint32_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2726,7 +2726,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_5)
+              class is (array_type_iint32_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2746,7 +2746,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_6)
+              class is (array_type_iint32_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2766,7 +2766,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint32_7)
+              class is (array_type_iint32_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2786,7 +2786,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_1)
+              class is (array_type_iint64_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2806,7 +2806,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_2)
+              class is (array_type_iint64_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2826,7 +2826,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_3)
+              class is (array_type_iint64_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2846,7 +2846,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_4)
+              class is (array_type_iint64_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2866,7 +2866,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_5)
+              class is (array_type_iint64_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2886,7 +2886,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_6)
+              class is (array_type_iint64_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2906,7 +2906,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_iint64_7)
+              class is (array_type_iint64_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2926,7 +2926,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_1)
+              class is (array_type_csp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2946,7 +2946,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_2)
+              class is (array_type_csp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2966,7 +2966,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_3)
+              class is (array_type_csp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -2986,7 +2986,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_4)
+              class is (array_type_csp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3006,7 +3006,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_5)
+              class is (array_type_csp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3026,7 +3026,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_6)
+              class is (array_type_csp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3046,7 +3046,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_csp_7)
+              class is (array_type_csp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3066,7 +3066,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_1)
+              class is (array_type_cdp_1)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3086,7 +3086,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_2)
+              class is (array_type_cdp_2)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3106,7 +3106,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_3)
+              class is (array_type_cdp_3)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3126,7 +3126,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_4)
+              class is (array_type_cdp_4)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3146,7 +3146,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_5)
+              class is (array_type_cdp_5)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3166,7 +3166,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_6)
+              class is (array_type_cdp_6)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1
@@ -3186,7 +3186,7 @@ contains
                 end if
 
                 files = [files, string_type(typed_array%name)]
-              class is (t_array_cdp_7)
+              class is (array_type_cdp_7)
                 do j = 1, size(files)
                     if (as_string(files(j)) == typed_array%name) then
                         if (present(iostat)) iostat = 1

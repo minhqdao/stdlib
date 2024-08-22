@@ -12,9 +12,13 @@ module stdlib_array
 
     public :: add_array, trueloc, falseloc
 
-    !> Helper class to allocate t_array as an abstract type.
-    type, public :: t_array_wrapper
-        class(t_array), allocatable :: array
+    !> Version: experimental
+    !>
+    !> Wrapper class that helps with allocation of array_type.
+    !> [Specification](../page/specs/stdlib_array.html#array_wrapper_type)
+    type, public :: array_wrapper_type
+        !> Polymorphic array.
+        class(array_type), allocatable :: array
     contains
         generic :: get_values => get_values_rsp_1
         procedure :: get_values_rsp_1
@@ -130,183 +134,472 @@ module stdlib_array
         procedure :: get_values_cdp_7
     end type
 
-    type, abstract, public :: t_array
+    !> Version: experimental
+    !>
+    !> Abstract class that is extended according to the type of the underlying array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type)
+    type, abstract, public :: array_type
+        !> Name of the array.
         character(:), allocatable :: name
     end type
 
-    type, extends(t_array), public :: t_array_rsp_1
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_1)
+    type, extends(array_type), public :: array_type_rsp_1
         real(sp), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_rsp_2
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_2)
+    type, extends(array_type), public :: array_type_rsp_2
         real(sp), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_rsp_3
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_3)
+    type, extends(array_type), public :: array_type_rsp_3
         real(sp), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rsp_4
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_4)
+    type, extends(array_type), public :: array_type_rsp_4
         real(sp), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rsp_5
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_5)
+    type, extends(array_type), public :: array_type_rsp_5
         real(sp), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rsp_6
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_6)
+    type, extends(array_type), public :: array_type_rsp_6
         real(sp), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rsp_7
+    !> Version: experimental
+    !>
+    !> Array type for real(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_7)
+    type, extends(array_type), public :: array_type_rsp_7
         real(sp), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_1
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_1)
+    type, extends(array_type), public :: array_type_rdp_1
         real(dp), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_rdp_2
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_2)
+    type, extends(array_type), public :: array_type_rdp_2
         real(dp), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_3
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_3)
+    type, extends(array_type), public :: array_type_rdp_3
         real(dp), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_4
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_4)
+    type, extends(array_type), public :: array_type_rdp_4
         real(dp), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_5
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_5)
+    type, extends(array_type), public :: array_type_rdp_5
         real(dp), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_6
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_6)
+    type, extends(array_type), public :: array_type_rdp_6
         real(dp), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_rdp_7
+    !> Version: experimental
+    !>
+    !> Array type for real(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_7)
+    type, extends(array_type), public :: array_type_rdp_7
         real(dp), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_1
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_1)
+    type, extends(array_type), public :: array_type_iint8_1
         integer(int8), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_iint8_2
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_2)
+    type, extends(array_type), public :: array_type_iint8_2
         integer(int8), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_3
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_3)
+    type, extends(array_type), public :: array_type_iint8_3
         integer(int8), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_4
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_4)
+    type, extends(array_type), public :: array_type_iint8_4
         integer(int8), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_5
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_5)
+    type, extends(array_type), public :: array_type_iint8_5
         integer(int8), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_6
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_6)
+    type, extends(array_type), public :: array_type_iint8_6
         integer(int8), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint8_7
+    !> Version: experimental
+    !>
+    !> Array type for integer(int8) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_7)
+    type, extends(array_type), public :: array_type_iint8_7
         integer(int8), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_1
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_1)
+    type, extends(array_type), public :: array_type_iint16_1
         integer(int16), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_iint16_2
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_2)
+    type, extends(array_type), public :: array_type_iint16_2
         integer(int16), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_3
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_3)
+    type, extends(array_type), public :: array_type_iint16_3
         integer(int16), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_4
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_4)
+    type, extends(array_type), public :: array_type_iint16_4
         integer(int16), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_5
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_5)
+    type, extends(array_type), public :: array_type_iint16_5
         integer(int16), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_6
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_6)
+    type, extends(array_type), public :: array_type_iint16_6
         integer(int16), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint16_7
+    !> Version: experimental
+    !>
+    !> Array type for integer(int16) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_7)
+    type, extends(array_type), public :: array_type_iint16_7
         integer(int16), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_1
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_1)
+    type, extends(array_type), public :: array_type_iint32_1
         integer(int32), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_iint32_2
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_2)
+    type, extends(array_type), public :: array_type_iint32_2
         integer(int32), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_3
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_3)
+    type, extends(array_type), public :: array_type_iint32_3
         integer(int32), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_4
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_4)
+    type, extends(array_type), public :: array_type_iint32_4
         integer(int32), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_5
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_5)
+    type, extends(array_type), public :: array_type_iint32_5
         integer(int32), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_6
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_6)
+    type, extends(array_type), public :: array_type_iint32_6
         integer(int32), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint32_7
+    !> Version: experimental
+    !>
+    !> Array type for integer(int32) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_7)
+    type, extends(array_type), public :: array_type_iint32_7
         integer(int32), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_1
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_1)
+    type, extends(array_type), public :: array_type_iint64_1
         integer(int64), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_iint64_2
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_2)
+    type, extends(array_type), public :: array_type_iint64_2
         integer(int64), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_3
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_3)
+    type, extends(array_type), public :: array_type_iint64_3
         integer(int64), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_4
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_4)
+    type, extends(array_type), public :: array_type_iint64_4
         integer(int64), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_5
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_5)
+    type, extends(array_type), public :: array_type_iint64_5
         integer(int64), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_6
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_6)
+    type, extends(array_type), public :: array_type_iint64_6
         integer(int64), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_iint64_7
+    !> Version: experimental
+    !>
+    !> Array type for integer(int64) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_7)
+    type, extends(array_type), public :: array_type_iint64_7
         integer(int64), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_1
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_1)
+    type, extends(array_type), public :: array_type_csp_1
         complex(sp), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_csp_2
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_2)
+    type, extends(array_type), public :: array_type_csp_2
         complex(sp), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_3
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_3)
+    type, extends(array_type), public :: array_type_csp_3
         complex(sp), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_4
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_4)
+    type, extends(array_type), public :: array_type_csp_4
         complex(sp), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_5
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_5)
+    type, extends(array_type), public :: array_type_csp_5
         complex(sp), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_6
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_6)
+    type, extends(array_type), public :: array_type_csp_6
         complex(sp), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_csp_7
+    !> Version: experimental
+    !>
+    !> Array type for complex(sp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_7)
+    type, extends(array_type), public :: array_type_csp_7
         complex(sp), allocatable :: values(:,:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_1
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_1)
+    type, extends(array_type), public :: array_type_cdp_1
         complex(dp), allocatable :: values(:)
     end type
-    type, extends(t_array), public :: t_array_cdp_2
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_2)
+    type, extends(array_type), public :: array_type_cdp_2
         complex(dp), allocatable :: values(:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_3
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_3)
+    type, extends(array_type), public :: array_type_cdp_3
         complex(dp), allocatable :: values(:,:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_4
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_4)
+    type, extends(array_type), public :: array_type_cdp_4
         complex(dp), allocatable :: values(:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_5
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_5)
+    type, extends(array_type), public :: array_type_cdp_5
         complex(dp), allocatable :: values(:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_6
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_6)
+    type, extends(array_type), public :: array_type_cdp_6
         complex(dp), allocatable :: values(:,:,:,:,:,:)
     end type
-    type, extends(t_array), public :: t_array_cdp_7
+    !> Version: experimental
+    !>
+    !> Array type for complex(dp) arrays of rank ${rank}.
+    !> Extends array_type and contains the values of the array.
+    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_7)
+    type, extends(array_type), public :: array_type_cdp_7
         complex(dp), allocatable :: values(:,:,:,:,:,:,:)
     end type
 
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    !> [Specification](../page/specs/stdlib_array.html#add_array)
     interface add_array
-        module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:)
             !> Status of addition.
@@ -316,9 +609,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:)
             !> Status of addition.
@@ -328,9 +621,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -340,9 +633,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -352,9 +645,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -364,9 +657,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -376,9 +669,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(sp), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -388,9 +681,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:)
             !> Status of addition.
@@ -400,9 +693,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:)
             !> Status of addition.
@@ -412,9 +705,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -424,9 +717,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -436,9 +729,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -448,9 +741,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -460,9 +753,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             real(dp), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -472,9 +765,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:)
             !> Status of addition.
@@ -484,9 +777,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:)
             !> Status of addition.
@@ -496,9 +789,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -508,9 +801,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -520,9 +813,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -532,9 +825,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -544,9 +837,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int8), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -556,9 +849,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:)
             !> Status of addition.
@@ -568,9 +861,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:)
             !> Status of addition.
@@ -580,9 +873,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -592,9 +885,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -604,9 +897,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -616,9 +909,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -628,9 +921,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int16), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -640,9 +933,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:)
             !> Status of addition.
@@ -652,9 +945,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:)
             !> Status of addition.
@@ -664,9 +957,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -676,9 +969,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -688,9 +981,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -700,9 +993,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -712,9 +1005,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int32), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -724,9 +1017,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:)
             !> Status of addition.
@@ -736,9 +1029,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:)
             !> Status of addition.
@@ -748,9 +1041,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -760,9 +1053,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -772,9 +1065,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -784,9 +1077,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -796,9 +1089,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             integer(int64), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -808,9 +1101,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:)
             !> Status of addition.
@@ -820,9 +1113,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:)
             !> Status of addition.
@@ -832,9 +1125,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -844,9 +1137,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -856,9 +1149,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -868,9 +1161,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -880,9 +1173,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_csp_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_csp_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(sp), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -892,9 +1185,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:)
             !> Status of addition.
@@ -904,9 +1197,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:)
             !> Status of addition.
@@ -916,9 +1209,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:,:)
             !> Status of addition.
@@ -928,9 +1221,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:,:,:)
             !> Status of addition.
@@ -940,9 +1233,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:,:,:,:)
             !> Status of addition.
@@ -952,9 +1245,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:,:,:,:,:)
             !> Status of addition.
@@ -964,9 +1257,9 @@ module stdlib_array
             !> Name of the array to be added. A default name will be used if not provided.
             character(len=*), intent(in), optional :: name
         end
-        module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
+        pure module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
             !> Array of arrays to which the array is to be added.
-            type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+            type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
             !> Array to be added.
             complex(dp), intent(in) :: array(:,:,:,:,:,:,:)
             !> Status of addition.
@@ -980,896 +1273,1344 @@ module stdlib_array
 
 contains
 
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_1)
+          class is (array_type_rsp_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_2)
+          class is (array_type_rsp_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_3)
+          class is (array_type_rsp_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_4)
+          class is (array_type_rsp_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_5)
+          class is (array_type_rsp_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_6)
+          class is (array_type_rsp_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rsp_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(sp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rsp_7)
+          class is (array_type_rsp_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_1)
+          class is (array_type_rdp_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_2)
+          class is (array_type_rdp_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_3)
+          class is (array_type_rdp_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_4)
+          class is (array_type_rdp_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_5)
+          class is (array_type_rdp_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_6)
+          class is (array_type_rdp_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_rdp_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         real(dp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_rdp_7)
+          class is (array_type_rdp_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_1)
+          class is (array_type_iint8_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_2)
+          class is (array_type_iint8_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_3)
+          class is (array_type_iint8_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_4)
+          class is (array_type_iint8_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_5)
+          class is (array_type_iint8_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_6)
+          class is (array_type_iint8_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint8_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int8), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint8_7)
+          class is (array_type_iint8_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_1)
+          class is (array_type_iint16_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_2)
+          class is (array_type_iint16_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_3)
+          class is (array_type_iint16_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_4)
+          class is (array_type_iint16_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_5)
+          class is (array_type_iint16_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_6)
+          class is (array_type_iint16_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint16_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int16), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint16_7)
+          class is (array_type_iint16_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_1)
+          class is (array_type_iint32_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_2)
+          class is (array_type_iint32_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_3)
+          class is (array_type_iint32_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_4)
+          class is (array_type_iint32_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_5)
+          class is (array_type_iint32_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_6)
+          class is (array_type_iint32_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint32_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int32), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint32_7)
+          class is (array_type_iint32_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_1)
+          class is (array_type_iint64_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_2)
+          class is (array_type_iint64_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_3)
+          class is (array_type_iint64_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_4)
+          class is (array_type_iint64_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_5)
+          class is (array_type_iint64_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_6)
+          class is (array_type_iint64_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_iint64_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         integer(int64), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_iint64_7)
+          class is (array_type_iint64_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_1)
+          class is (array_type_csp_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_2)
+          class is (array_type_csp_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_3)
+          class is (array_type_csp_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_4)
+          class is (array_type_csp_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_5)
+          class is (array_type_csp_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_6)
+          class is (array_type_csp_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_csp_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(sp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_csp_7)
+          class is (array_type_csp_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_1(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_1)
+          class is (array_type_cdp_1)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_2(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_2)
+          class is (array_type_cdp_2)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_3(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_3)
+          class is (array_type_cdp_3)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_4(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_4)
+          class is (array_type_cdp_4)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_5(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_5)
+          class is (array_type_cdp_5)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_6(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_6)
+          class is (array_type_cdp_6)
             values = array_%values
           class default
             if (present(stat)) stat = 1
             if (present(msg)) msg = "Array is of unexpected type."
         end select
     end
+    !> Version: experimental
+    !>
+    !> Extract array values from an array wrapper.
+    !> [Specification](../page/specs/stdlib_array.html#get_values)
     pure subroutine get_values_cdp_7(wrapper, values, stat, msg)
-        class(t_array_wrapper), intent(in) :: wrapper
+        !> Array wrapper to extract the values from.
+        class(array_wrapper_type), intent(in) :: wrapper
+        !> Extracted values.
         complex(dp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        !> Optional status of the extraction.
         integer, intent(out), optional :: stat
+        !> Optional error message.
         character(len=:), allocatable, intent(out), optional :: msg
 
         if (present(stat)) stat = 0
 
         select type (array_ => wrapper%array)
-          class is (t_array_cdp_7)
+          class is (array_type_cdp_7)
             values = array_%values
           class default
             if (present(stat)) stat = 1
@@ -1877,9 +2618,12 @@ contains
         end select
     end
 
-    module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:)
         !> Status of addition.
@@ -1890,9 +2634,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -1932,9 +2675,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:)
         !> Status of addition.
@@ -1945,9 +2691,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -1987,9 +2732,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -2000,9 +2748,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2042,9 +2789,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -2055,9 +2805,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2097,9 +2846,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -2110,9 +2862,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2152,9 +2903,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -2165,9 +2919,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2207,9 +2960,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rsp_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(sp), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -2220,9 +2976,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rsp_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rsp_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2262,9 +3017,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:)
         !> Status of addition.
@@ -2275,9 +3033,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2317,9 +3074,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:)
         !> Status of addition.
@@ -2330,9 +3090,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2372,9 +3131,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -2385,9 +3147,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2427,9 +3188,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -2440,9 +3204,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2482,9 +3245,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -2495,9 +3261,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2537,9 +3302,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -2550,9 +3318,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2592,9 +3359,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_rdp_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         real(dp), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -2605,9 +3375,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_rdp_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_rdp_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2647,9 +3416,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:)
         !> Status of addition.
@@ -2660,9 +3432,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2702,9 +3473,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:)
         !> Status of addition.
@@ -2715,9 +3489,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2757,9 +3530,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -2770,9 +3546,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2812,9 +3587,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -2825,9 +3603,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2867,9 +3644,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -2880,9 +3660,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2922,9 +3701,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -2935,9 +3717,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -2977,9 +3758,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint8_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int8), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -2990,9 +3774,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint8_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint8_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3032,9 +3815,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:)
         !> Status of addition.
@@ -3045,9 +3831,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3087,9 +3872,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:)
         !> Status of addition.
@@ -3100,9 +3888,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3142,9 +3929,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -3155,9 +3945,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3197,9 +3986,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -3210,9 +4002,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3252,9 +4043,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -3265,9 +4059,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3307,9 +4100,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -3320,9 +4116,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3362,9 +4157,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint16_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int16), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -3375,9 +4173,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint16_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint16_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3417,9 +4214,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:)
         !> Status of addition.
@@ -3430,9 +4230,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3472,9 +4271,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:)
         !> Status of addition.
@@ -3485,9 +4287,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3527,9 +4328,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -3540,9 +4344,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3582,9 +4385,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -3595,9 +4401,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3637,9 +4442,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -3650,9 +4458,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3692,9 +4499,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -3705,9 +4515,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3747,9 +4556,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint32_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int32), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -3760,9 +4572,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint32_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint32_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3802,9 +4613,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:)
         !> Status of addition.
@@ -3815,9 +4629,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3857,9 +4670,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:)
         !> Status of addition.
@@ -3870,9 +4686,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3912,9 +4727,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -3925,9 +4743,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -3967,9 +4784,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -3980,9 +4800,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4022,9 +4841,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -4035,9 +4857,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4077,9 +4898,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -4090,9 +4914,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4132,9 +4955,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_iint64_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         integer(int64), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -4145,9 +4971,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_iint64_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_iint64_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4187,9 +5012,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:)
         !> Status of addition.
@@ -4200,9 +5028,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4242,9 +5069,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:)
         !> Status of addition.
@@ -4255,9 +5085,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4297,9 +5126,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -4310,9 +5142,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4352,9 +5183,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -4365,9 +5199,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4407,9 +5240,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -4420,9 +5256,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4462,9 +5297,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -4475,9 +5313,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4517,9 +5354,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_csp_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_csp_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(sp), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -4530,9 +5370,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_csp_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_csp_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4572,9 +5411,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_1(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:)
         !> Status of addition.
@@ -4585,9 +5427,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_1) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_1) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4627,9 +5468,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_2(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:)
         !> Status of addition.
@@ -4640,9 +5484,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_2) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_2) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4682,9 +5525,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_3(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:,:)
         !> Status of addition.
@@ -4695,9 +5541,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_3) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_3) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4737,9 +5582,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_4(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:,:,:)
         !> Status of addition.
@@ -4750,9 +5598,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_4) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_4) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4792,9 +5639,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_5(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:,:,:,:)
         !> Status of addition.
@@ -4805,9 +5655,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_5) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_5) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4847,9 +5696,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_6(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:,:,:,:,:)
         !> Status of addition.
@@ -4860,9 +5712,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_6) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_6) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
@@ -4902,9 +5753,12 @@ contains
         allocate(tmp_arrays(arr_size + 1)%array, source=t_arr)
         call move_alloc(tmp_arrays, arrays)
     end
-    module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
-        !> Array of arrays to which the array is to be added.
-        type(t_array_wrapper), allocatable, intent(inout) :: arrays(:)
+    !> Version: experimental
+    !>
+    !> Add an array to an array of array wrappers.
+    pure module subroutine add_array_cdp_7(arrays, array, stat, msg, name)
+        !> Array of wrapper arrays to which the array is to be added.
+        type(array_wrapper_type), allocatable, intent(inout) :: arrays(:)
         !> Array to be added.
         complex(dp), intent(in) :: array(:,:,:,:,:,:,:)
         !> Status of addition.
@@ -4915,9 +5769,8 @@ contains
         character(len=*), intent(in), optional :: name
 
         integer :: i, arr_size
-        type(t_array_cdp_7) :: t_arr
-        type(t_array_wrapper), allocatable :: tmp_arrays(:)
-
+        type(array_type_cdp_7) :: t_arr
+        type(array_wrapper_type), allocatable :: tmp_arrays(:)
 
         if (present(stat)) stat = 0
 
