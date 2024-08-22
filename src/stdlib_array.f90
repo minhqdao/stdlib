@@ -15,6 +15,119 @@ module stdlib_array
     !> Helper class to allocate t_array as an abstract type.
     type, public :: t_array_wrapper
         class(t_array), allocatable :: array
+    contains
+        generic :: get_values => get_values_rsp_1
+        procedure :: get_values_rsp_1
+        generic :: get_values => get_values_rsp_2
+        procedure :: get_values_rsp_2
+        generic :: get_values => get_values_rsp_3
+        procedure :: get_values_rsp_3
+        generic :: get_values => get_values_rsp_4
+        procedure :: get_values_rsp_4
+        generic :: get_values => get_values_rsp_5
+        procedure :: get_values_rsp_5
+        generic :: get_values => get_values_rsp_6
+        procedure :: get_values_rsp_6
+        generic :: get_values => get_values_rsp_7
+        procedure :: get_values_rsp_7
+        generic :: get_values => get_values_rdp_1
+        procedure :: get_values_rdp_1
+        generic :: get_values => get_values_rdp_2
+        procedure :: get_values_rdp_2
+        generic :: get_values => get_values_rdp_3
+        procedure :: get_values_rdp_3
+        generic :: get_values => get_values_rdp_4
+        procedure :: get_values_rdp_4
+        generic :: get_values => get_values_rdp_5
+        procedure :: get_values_rdp_5
+        generic :: get_values => get_values_rdp_6
+        procedure :: get_values_rdp_6
+        generic :: get_values => get_values_rdp_7
+        procedure :: get_values_rdp_7
+        generic :: get_values => get_values_iint8_1
+        procedure :: get_values_iint8_1
+        generic :: get_values => get_values_iint8_2
+        procedure :: get_values_iint8_2
+        generic :: get_values => get_values_iint8_3
+        procedure :: get_values_iint8_3
+        generic :: get_values => get_values_iint8_4
+        procedure :: get_values_iint8_4
+        generic :: get_values => get_values_iint8_5
+        procedure :: get_values_iint8_5
+        generic :: get_values => get_values_iint8_6
+        procedure :: get_values_iint8_6
+        generic :: get_values => get_values_iint8_7
+        procedure :: get_values_iint8_7
+        generic :: get_values => get_values_iint16_1
+        procedure :: get_values_iint16_1
+        generic :: get_values => get_values_iint16_2
+        procedure :: get_values_iint16_2
+        generic :: get_values => get_values_iint16_3
+        procedure :: get_values_iint16_3
+        generic :: get_values => get_values_iint16_4
+        procedure :: get_values_iint16_4
+        generic :: get_values => get_values_iint16_5
+        procedure :: get_values_iint16_5
+        generic :: get_values => get_values_iint16_6
+        procedure :: get_values_iint16_6
+        generic :: get_values => get_values_iint16_7
+        procedure :: get_values_iint16_7
+        generic :: get_values => get_values_iint32_1
+        procedure :: get_values_iint32_1
+        generic :: get_values => get_values_iint32_2
+        procedure :: get_values_iint32_2
+        generic :: get_values => get_values_iint32_3
+        procedure :: get_values_iint32_3
+        generic :: get_values => get_values_iint32_4
+        procedure :: get_values_iint32_4
+        generic :: get_values => get_values_iint32_5
+        procedure :: get_values_iint32_5
+        generic :: get_values => get_values_iint32_6
+        procedure :: get_values_iint32_6
+        generic :: get_values => get_values_iint32_7
+        procedure :: get_values_iint32_7
+        generic :: get_values => get_values_iint64_1
+        procedure :: get_values_iint64_1
+        generic :: get_values => get_values_iint64_2
+        procedure :: get_values_iint64_2
+        generic :: get_values => get_values_iint64_3
+        procedure :: get_values_iint64_3
+        generic :: get_values => get_values_iint64_4
+        procedure :: get_values_iint64_4
+        generic :: get_values => get_values_iint64_5
+        procedure :: get_values_iint64_5
+        generic :: get_values => get_values_iint64_6
+        procedure :: get_values_iint64_6
+        generic :: get_values => get_values_iint64_7
+        procedure :: get_values_iint64_7
+        generic :: get_values => get_values_csp_1
+        procedure :: get_values_csp_1
+        generic :: get_values => get_values_csp_2
+        procedure :: get_values_csp_2
+        generic :: get_values => get_values_csp_3
+        procedure :: get_values_csp_3
+        generic :: get_values => get_values_csp_4
+        procedure :: get_values_csp_4
+        generic :: get_values => get_values_csp_5
+        procedure :: get_values_csp_5
+        generic :: get_values => get_values_csp_6
+        procedure :: get_values_csp_6
+        generic :: get_values => get_values_csp_7
+        procedure :: get_values_csp_7
+        generic :: get_values => get_values_cdp_1
+        procedure :: get_values_cdp_1
+        generic :: get_values => get_values_cdp_2
+        procedure :: get_values_cdp_2
+        generic :: get_values => get_values_cdp_3
+        procedure :: get_values_cdp_3
+        generic :: get_values => get_values_cdp_4
+        procedure :: get_values_cdp_4
+        generic :: get_values => get_values_cdp_5
+        procedure :: get_values_cdp_5
+        generic :: get_values => get_values_cdp_6
+        procedure :: get_values_cdp_6
+        generic :: get_values => get_values_cdp_7
+        procedure :: get_values_cdp_7
     end type
 
     type, abstract, public :: t_array
@@ -866,6 +979,903 @@ module stdlib_array
     end interface
 
 contains
+
+    pure subroutine get_values_rsp_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rsp_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(sp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rsp_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_rdp_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        real(dp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_rdp_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint8_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int8), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint8_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint16_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int16), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint16_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint32_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int32), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint32_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_iint64_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        integer(int64), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_iint64_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_csp_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(sp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_csp_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_1(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_1)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_2(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_2)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_3(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_3)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_4(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_4)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_5(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_5)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_6(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_6)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
+    pure subroutine get_values_cdp_7(wrapper, values, stat, msg)
+        class(t_array_wrapper), intent(in) :: wrapper
+        complex(dp), allocatable, intent(out) :: values(:,:,:,:,:,:,:)
+        integer, intent(out), optional :: stat
+        character(len=:), allocatable, intent(out), optional :: msg
+
+        if (present(stat)) stat = 0
+
+        select type (array_ => wrapper%array)
+          class is (t_array_cdp_7)
+            values = array_%values
+          class default
+            if (present(stat)) stat = 1
+            if (present(msg)) msg = "Array is of unexpected type."
+        end select
+    end
 
     module subroutine add_array_rsp_1(arrays, array, stat, msg, name)
         !> Array of arrays to which the array is to be added.
