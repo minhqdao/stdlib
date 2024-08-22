@@ -2053,10 +2053,7 @@ contains
         end if
     end
 
-    !> Version: experimental
-    !>
     !> Save multidimensional arrays to a compressed or an uncompressed npz file.
-    !> ([Specification](../page/specs/stdlib_io.html#save_npz))
     module subroutine save_arrays_to_npz(filename, arrays, iostat, iomsg, compressed)
         !> Name of the npz file to save to.
         character(len=*), intent(in) :: filename

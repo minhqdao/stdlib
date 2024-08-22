@@ -1,7 +1,7 @@
 ! SPDX-Identifier: MIT
 
 
-!> Description of the npy format taken from
+!> Description of the npy and npz formats taken from
 !> https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html
 !>
 !>## Format Version 1.0

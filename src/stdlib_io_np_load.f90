@@ -4215,10 +4215,7 @@ contains
         &    stat=stat)
     end
 
-    !> Version: experimental
-    !>
     !> Load multidimensional arrays from a compressed or uncompressed npz file.
-    !> ([Specification](../page/specs/stdlib_io.html#load_npz))
     module subroutine load_npz_to_arrays(filename, arrays, iostat, iomsg, tmp_dir)
         character(len=*), intent(in) :: filename
         type(array_wrapper_type), allocatable, intent(out) :: arrays(:)
@@ -4259,11 +4256,17 @@ contains
         end if
     end
 
+    !> Load arrays from unzipped files.
     subroutine load_unzipped_files_to_arrays(files, dir, arrays, stat, msg)
+        !> List of files to load arrays from.
         type(string_type), intent(in) :: files(:)
+        !> Directory containing the files.
         character(len=*), intent(in) :: dir
+        !> Array of array wrappers to store the loaded arrays.
         type(array_wrapper_type), allocatable, intent(out) :: arrays(:)
+        !> Status of the operation. Zero on success.
         integer, intent(out) :: stat
+        !> Error message in case of non-zero status.
         character(len=:), allocatable, intent(out) :: msg
 
         integer :: i, io

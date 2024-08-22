@@ -1,7 +1,7 @@
 ! SPDX-Identifier: MIT
 
 
-!> Module for index manipulation and general array handling
+!> Module for general array handling and index manipulation.
 !>
 !> The specification of this module is available [here](../page/specs/stdlib_array.html).
 module stdlib_array
