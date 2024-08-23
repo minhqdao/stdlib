@@ -14,7 +14,7 @@ module stdlib_array
 
     !> Version: experimental
     !>
-    !> Wrapper class that helps with allocation of array_type.
+    !> Wrapper class that helps with the allocation of `array_type`.
     !> [Specification](../page/specs/stdlib_array.html#array_wrapper_type)
     type, public :: array_wrapper_type
         !> Polymorphic array.
@@ -136,7 +136,7 @@ module stdlib_array
 
     !> Version: experimental
     !>
-    !> Abstract class that is extended according to the type of the underlying array.
+    !> Abstract type that is extended according to the type and rank of the stored array.
     !> [Specification](../page/specs/stdlib_array.html#array_type)
     type, abstract, public :: array_type
         !> Name of the array.
@@ -145,456 +145,400 @@ module stdlib_array
 
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_1)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_1
         real(sp), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_2)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_2
         real(sp), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_3)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_3
         real(sp), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_4)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_4
         real(sp), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_5)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_5
         real(sp), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_6)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_6
         real(sp), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rsp_7)
+    !> Array type for real(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rsp_7
         real(sp), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_1)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_1
         real(dp), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_2)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_2
         real(dp), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_3)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_3
         real(dp), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_4)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_4
         real(dp), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_5)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_5
         real(dp), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_6)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_6
         real(dp), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for real(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_rdp_7)
+    !> Array type for real(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_rdp_7
         real(dp), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_1)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_1
         integer(int8), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_2)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_2
         integer(int8), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_3)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_3
         integer(int8), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_4)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_4
         integer(int8), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_5)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_5
         integer(int8), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_6)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_6
         integer(int8), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int8) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint8_7)
+    !> Array type for integer(int8) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint8_7
         integer(int8), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_1)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_1
         integer(int16), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_2)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_2
         integer(int16), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_3)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_3
         integer(int16), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_4)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_4
         integer(int16), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_5)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_5
         integer(int16), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_6)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_6
         integer(int16), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int16) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint16_7)
+    !> Array type for integer(int16) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint16_7
         integer(int16), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_1)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_1
         integer(int32), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_2)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_2
         integer(int32), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_3)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_3
         integer(int32), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_4)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_4
         integer(int32), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_5)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_5
         integer(int32), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_6)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_6
         integer(int32), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int32) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint32_7)
+    !> Array type for integer(int32) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint32_7
         integer(int32), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_1)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_1
         integer(int64), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_2)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_2
         integer(int64), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_3)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_3
         integer(int64), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_4)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_4
         integer(int64), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_5)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_5
         integer(int64), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_6)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_6
         integer(int64), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for integer(int64) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_iint64_7)
+    !> Array type for integer(int64) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_iint64_7
         integer(int64), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_1)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_1
         complex(sp), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_2)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_2
         complex(sp), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_3)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_3
         complex(sp), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_4)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_4
         complex(sp), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_5)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_5
         complex(sp), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_6)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_6
         complex(sp), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(sp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_csp_7)
+    !> Array type for complex(sp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_csp_7
         complex(sp), allocatable :: values(:,:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_1)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_1
         complex(dp), allocatable :: values(:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_2)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_2
         complex(dp), allocatable :: values(:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_3)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_3
         complex(dp), allocatable :: values(:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_4)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_4
         complex(dp), allocatable :: values(:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_5)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_5
         complex(dp), allocatable :: values(:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_6)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_6
         complex(dp), allocatable :: values(:,:,:,:,:,:)
     end type
     !> Version: experimental
     !>
-    !> Array type for complex(dp) arrays of rank ${rank}.
-    !> Extends array_type and contains the values of the array.
-    !> [Specification](../page/specs/stdlib_array.html#array_type_cdp_7)
+    !> Array type for complex(dp) arrays of ${k1} precision and rank ${rank}.
+    !> Extends `array_type` and contains the values of the array.
     type, extends(array_type), public :: array_type_cdp_7
         complex(dp), allocatable :: values(:,:,:,:,:,:,:)
     end type
 
     !> Version: experimental
     !>
-    !> Add an array to an array of array wrappers.
+    !> Add an array of defined type and rank to an array of array wrappers.
     !> [Specification](../page/specs/stdlib_array.html#add_array)
     interface add_array
         pure module subroutine add_array_rsp_1(arrays, array, stat, msg, name)

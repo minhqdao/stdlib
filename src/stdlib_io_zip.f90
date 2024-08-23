@@ -2,7 +2,7 @@
 
 !> Handling of zip files including creation and extraction.
 module stdlib_io_zip
-    use stdlib_filesystem, only: exists, run, temp_dir
+    use stdlib_io_filesystem, only: exists, run, temp_dir
     use stdlib_string_type, only: string_type, char
     use stdlib_strings, only: starts_with
     implicit none
@@ -18,6 +18,7 @@ contains
     !> Version: experimental
     !>
     !> Create a zip file from a list of files.
+    !> [Specification](../page/specs/stdlib_io.html#zip)
     subroutine zip(output_file, files, stat, msg, compressed)
         !> Name of the zip file to create.
         character(*), intent(in) :: output_file
@@ -68,6 +69,7 @@ contains
     !> Version: experimental
     !>
     !> Extract a zip file to a directory.
+    !> [Specification](../page/specs/stdlib_io.html#unzip)
     subroutine unzip(filename, outputdir, stat, msg)
         !> Name of the zip file to extract.
         character(len=*), intent(in) :: filename
