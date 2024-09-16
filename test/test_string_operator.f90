@@ -1,4 +1,4 @@
-! SPDX-Identifier: MIT
+! SPDX-Identifer: MIT
 module test_string_operator
     use testdrive, only : new_unittest, unittest_type, error_type, check
     use stdlib_string_type, only : string_type, assignment(=), len, &
