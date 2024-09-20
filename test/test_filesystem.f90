@@ -17,6 +17,7 @@ contains
         type(unittest_type), allocatable, intent(out) :: testsuite(:)
 
         testsuite = [ &
+            new_unittest("fs_file_is_windows", fs_is_windows), &
             new_unittest("fs_file_not_exists", fs_file_not_exists, should_fail=.true.), &
             new_unittest("fs_file_exists", fs_file_exists), &
             new_unittest("fs_current_dir_exists", fs_current_dir_exists), &
@@ -28,6 +29,20 @@ contains
             new_unittest("fs_list_dir_two_files", fs_list_dir_two_files), &
             new_unittest("fs_list_dir_one_file_one_dir", fs_list_dir_one_file_one_dir) &
             ]
+    end
+
+    subroutine fs_is_windows(error)
+        type(error_type), allocatable, intent(out) :: error
+
+        character(len=255) :: value
+        integer :: length, stat
+
+        call get_environment_variable('HOMEDRIVE', value, length, stat)
+        if (is_windows()) then
+            call check(error, stat == 0 .and. length > 0, "Windows should be detected.")
+        else
+            call check(error, stat /= 0 .and. length == 0, "Windows should not be detected.")
+        end if
     end
 
     subroutine fs_file_not_exists(error)
@@ -206,7 +221,11 @@ contains
             call test_failed(error, "Creating file 1 in directory '"//temp_list_dir//"' failed."); return
         end if
 
-        call run('mkdir '//temp_list_dir//'/'//dir, iostat=stat)
+        if (is_windows()) then
+            call run('mkdir '//temp_list_dir//'\'//dir, iostat=stat)
+        else
+            call run('mkdir '//temp_list_dir//'/'//dir, iostat=stat)
+        end if
         if (stat /= 0) then
             call test_failed(error, "Creating dir in directory '"//temp_list_dir//"' failed."); return
         end if
