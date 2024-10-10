@@ -1,14 +1,16 @@
 ! SPDX-Identifier: MIT
 
 !> Interaction with the filesystem.
-module stdlib_io_filesystem
+module stdlib_filesystem
     use stdlib_string_type, only: string_type
     implicit none
     private
 
     public :: temp_dir, is_windows, exists, path_separator, list_dir, mkdir, rmdir, run
 
+    !> Whether the operating system is Windows.
     logical, parameter :: is_windows = .false.
+    !> Path separator for filesystems on non-Windows operating systems.
     character, parameter :: path_separator = '/'
 
     character(*), parameter :: temp_dir = 'temp'
@@ -17,7 +19,7 @@ contains
     !> Version: experimental
     !>
     !> Whether a file or directory exists at the given path.
-    !> [Specification](../page/specs/stdlib_io.html#exists)
+    !> [Specification](../page/specs/stdlib_filesystem.html#exists)
     logical function exists(path)
         !> Path to a file or directory.
         character(len=*), intent(in) :: path
@@ -32,7 +34,7 @@ contains
     !> Version: experimental
     !>
     !> List files and directories of a directory. Does not list hidden files.
-    !> [Specification](../page/specs/stdlib_io.html#list_dir)
+    !> [Specification](../page/specs/stdlib_filesystem.html#list_dir)
     subroutine list_dir(dir, files, iostat, iomsg)
         !> Directory to list.
         character(len=*), intent(in) :: dir
@@ -90,7 +92,7 @@ contains
     !> Version: experimental
     !>
     !> Create a directory.
-    !> [Specification](../page/specs/stdlib_io.html#mkdir)
+    !> [Specification](../page/specs/stdlib_filesystem.html#mkdir)
     subroutine mkdir(dir, iostat, iomsg)
         character(len=*), intent(in) :: dir
         integer, optional, intent(out) :: iostat
@@ -106,7 +108,7 @@ contains
     !> Version: experimental
     !>
     !> Remove a directory including its contents.
-    !> [Specification](../page/specs/stdlib_io.html#rmdir)
+    !> [Specification](../page/specs/stdlib_filesystem.html#rmdir)
     subroutine rmdir(dir)
         character(len=*), intent(in) :: dir
 
@@ -120,7 +122,7 @@ contains
     !> Version: experimental
     !>
     !> Run a command in the shell.
-    !> [Specification](../page/specs/stdlib_io.html#run)
+    !> [Specification](../page/specs/stdlib_filesystem.html#run)
     subroutine run(command, iostat, iomsg)
         !> Command to run.
         character(len=*), intent(in) :: command
